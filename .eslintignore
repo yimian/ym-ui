@@ -1,0 +1,15 @@
+build/
+config/
+dist/
+# /*.js
+# !/src/*.js
+src/i18n/*.js
+node_modules
+lib
+*.md
+*.sh
+*.woff
+*.ttf
+*.py
+babel.config.js
+# \.eslintrc.js

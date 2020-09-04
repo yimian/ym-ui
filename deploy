@@ -1,0 +1,42 @@
+#!/usr/bin/env sh
+cd $HOME/projects/ym-ui
+git pull
+
+if [ "$1" = "test" ]
+then
+  echo ">>>npm run build-test"
+  npm run build-test
+elif [ "$1" = "production" ]
+then
+  echo ">>>npm run build"
+  npm run build
+else
+  echo "Please deploy in specific mode like test or production."
+  exit
+fi
+
+sleep 2
+FE_PATH=/data/www/ym-ui
+FOLDER_DIST=${FE_PATH}/dist
+FOLDER_DIST_BAK=${FE_PATH}/dist_bak
+
+if [ ! -d ${FE_PATH} ]
+then
+  # rm -rf ${FE_PATH}
+  mkdir ${FE_PATH}
+fi
+
+rm -rf ${FOLDER_DIST_BAK}
+
+if [ -d ${FOLDER_DIST} ]
+then
+  /bin/cp -r ${FOLDER_DIST} ${FOLDER_DIST_BAK}
+  rm -rf ${FOLDER_DIST}
+  mkdir ${FOLDER_DIST}
+  /bin/cp -rf ./dist/. ${FOLDER_DIST}/
+else
+  rm -rf ${FOLDER_DIST}
+  mkdir ${FOLDER_DIST}
+  /bin/cp -rf ./dist/. ${FOLDER_DIST}/
+  /bin/cp -r ${FOLDER_DIST} ${FOLDER_DIST_BAK}
+fi
