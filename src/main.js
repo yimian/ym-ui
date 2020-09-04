@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import moment from 'moment';
-import 'normalize.css/normalize.css';
 import auth from 'vue-hamlet';
 import { sync } from 'vuex-router-sync';
 import App from './App.vue';
