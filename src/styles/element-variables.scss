@@ -1,3 +1,5 @@
+@import 'variable';
+
 /*
 Write your variables here. All available variables can be
 found in element-ui/packages/theme-chalk/src/common/var.scss or
@@ -6,7 +8,23 @@ found in element-ui/packages/theme-chalk/src/common/var.scss or
 Tip: These must be declared before the import and will automatically override the Element defaults.
 For example, to overwrite the theme color:
 */
-// $--color-primary: teal;
+$--color-primary: $--color-brand-500;
+$--color-success: $--color-green-500;
+$--color-warning: $--color-orange-500;
+$--color-danger: $--color-red-500;
+$--color-info: $--color-netural-70;
+
+$--color-text-primary: $--color-netural-800;
+$--color-text-regular: $--color-netural-600;
+$--color-text-secondary: $--color-netural-70;
+$--color-text-placeholder: $--color-netural-40;
+$--border-color-base: $--color-netural-30;
+$--border-color-light: $--color-netural-20;
+$--border-color-lighter: $--color-netural-10;
+
+$--background-color-base: $--color-netural-10;
+
+$--border-radius-base: $--borderRadius-sm;
 
 /* icon font path, required */
 $--font-path: '~element-ui/lib/theme-chalk/fonts';

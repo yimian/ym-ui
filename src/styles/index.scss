@@ -1,5 +1,7 @@
-@import './global.scss';
-@import './sidebar.scss';
-@import './nav-container.scss';
-@import './main-container.scss';
-@import './tailwind.css';
+@import
+'variable',
+'tailwind',
+'global',
+'sidebar',
+'main-container',
+'nav-container';
