@@ -1,22 +1,12 @@
 <template>
   <el-header class="flex-box space-btw">
-    <span
-      class="toggle-btn"
-      @click.stop="$emit('toggleSidebar')"
-    >
-      <img
-        src="@/assets/baseline_menu_white_24dp.png"
-        alt=""
-      >
-    </span>
-
     <!-- logo -->
     <router-link :to="{ path: '/' }">
       <span class="logo">
-        <img
+        <!-- <img
           src="@/assets/logo.png"
           alt=""
-        >
+        > -->
       </span>
     </router-link>
 

@@ -1,26 +1,14 @@
 <template>
-  <div class="panel-wrapper">
-    <span class="logo">
-      <img
-        src="../../assets/logo.png"
-        alt=""
-      >
-    </span>
-
-    <div class="slogan-wrapper">
-      <div class="slogan">
-        <img
-          src="../../assets/login-bg.svg"
-          alt=""
-        >
-      </div>
-    </div>
-
-    <div class="panel-content">
-      <base-langbar/>
-      <div class="login-con">
-        <el-form class="frame">
-          <h1 v-if="!isMobile">
+  <div class="flex h-screen">
+    <!-- Form -->
+    <section class="flex-1 max-w-xl p-6 bg-white">
+      <div class="flex flex-col justify-between max-w-sm h-full mx-auto">
+        <header class="flex justify-between">
+          <img class="h-8" src="@/assets/logo.svg" alt="Product Logo">
+          <base-langbar/>
+        </header>
+        <el-form>
+          <h1 class="mb-8 leading-snug text-4xl font-semibold text-netural-500">
             {{ $t('common.loginN') }}
           </h1>
           <!-- <p>Don’t have an account? <el-button type="text">Create your account</el-button></p> -->
@@ -36,45 +24,44 @@
           <el-form-item>
             <el-input
               size="medium"
-              clearable
+              show-password
               :placeholder="$t('common.password')"
               v-model="form.password"
               type="password"
-              @keyup.enter.native="login"
-            ></el-input>
+              @keyup.enter.native="login">
+            </el-input>
           </el-form-item>
-          <el-form-item>
-            <el-col :span="12">
+          <el-form-item class="mb-0">
+            <div class="flex justify-between">
               <el-button
                 type="text"
-                @click="redirectForgotPassword"
-              >
+                @click="redirectForgotPassword">
                 {{ $t('common.forgetPassword') }}
               </el-button>
-            </el-col>
-            <el-col :span="12">
               <el-button
                 type="primary"
                 size="medium"
-                style="width:100%"
                 :disabled="loginLoading"
-                @click="login"
-              >
+                @click="login">
+                <ym-svg svgName="setting" className="w-5 h-5" />
                 {{ $t('common.login') }}
                 <i
                   v-if="loginLoading"
                   class="el-icon-loading"
                 ></i>
               </el-button>
-            </el-col>
+            </div>
           </el-form-item>
         </el-form>
+        <footer class="text-center text-xs text-netural-70">
+          {{ $t('common.copyrightMessage', { currentYear }) }}
+        </footer>
       </div>
-
-      <el-footer>
-        {{ $t('common.copyrightMessage', { currentYear }) }}
-      </el-footer>
-    </div>
+    </section>
+    <!-- Slogan & Images -->
+    <section class="hidden flex-1">
+      <h1>让决策更智能</h1>
+    </section>
   </div>
 </template>
 
@@ -157,5 +144,4 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "../../styles/_login.scss";
 </style>

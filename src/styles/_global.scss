@@ -1,206 +1,30 @@
-html, body {
-  width: 100%;
-  // height: 100%;
-  margin: 0;
-  padding: 0;
-}
 
-* {
-  box-sizing: border-box;
-}
+/* 
+  Basic
+*/
 
-body {
-  font-size: 14px;
-  background: #fff;
-  font-family: Roboto, sans-serif, serif, Helvetica Neue, Helvetica,"Open Sans", open-sans, PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  color: #183a6f;
-  overflow: hidden;
-}
-
-ul, li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-
-// LAYOUT
-.app-wrapper {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  overflow-y: auto !important;
-}
-
-// HEADER
-.el-header {
-  background-color: #065bc9;
-  font-weight: 500;
-
-  .logo {
-    margin-left: 20px;
-
-    img {
-      display: inline-block;
-      height: 32px;
-      vertical-align: middle;
-    }
-  }
-
-  .toggle-btn {
-    position: absolute;
-    left: 10px;
-    top: 19px;
-    z-index: 1;
-  }
-
-  .el-menu {
-    &--horizontal {
-      border-bottom: 0;
-    }
-
-    .el-menu-item {
-      border-bottom: 0;
-      font-size: 16px;
-      font-weight: 600;
-
-      &:hover, &:active {
-        border-bottom: 0;
-      }
-
-      &.is-active {
-        border-bottom: 0;
-        background-color: transparent;
-      }
-    }
-
-    .el-submenu {
-      border-bottom: 0;
-
-      .el-submenu__title {
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 60px;
-        border-bottom: 0;
-      }
-
-      &.is-active {
-        border-bottom: 0;
-        background-color: transparent;
-
-        .el-submenu__title {
-          border-bottom: 0;
-          border-bottom-color: transparent !important;
-        }
-      }
-    }
-  }
-
-  .userinfo {
-    color: #91bdf0;
-    line-height: 26px;
-    cursor: pointer;
-
-    .avatar {
-      font-size: 20px;
-      margin-right: 8px;
-      width: 32px;
-      height: 32px;
-
-      img {
-        border-radius: 50%;
-        display: inline-flex;
-        height: inherit;
-        width: inherit;
-      }
-    }
-
-    &:hover {
-      color: #fff;
-    }
-  }
-}
-
-// MAIN
-.el-container {
-  height: 100%;
-}
-
-.el-main {
-  height: 100%;
-  width: 100%;
-  position: relative;
-  padding: 0;
-  transition: 80ms;
-}
-
-.el-aside {
-  .el-menu {
-    height: 100%;
-  }
-}
-
-.sub-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #fff;
-  width: 100%;
-  z-index: 2001;
-  background-color: #065bc9;
-}
-
-.wrapper {
-  height: 100%;
-  position: relative;
-  background-color: #fff;
-  overflow-y: auto;
-}
-
-.content {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.el-footer {
-  text-align: center;
-  color: gray;
-  font-size: 12px;
-}
-
-.change-lang {
-  display: block;
-  cursor: pointer;
-  margin-left: 20px;
-
+// Button
+.el-button {
   span {
-    cursor: pointer;
-    padding: 0 2px;
-    color: #c0c4cc;
+    @apply flex items-center;
+  }
+}
 
-    &.active-lang {
-      color: #0302f5;
+
+/* 
+  Form
+*/
+
+// Input
+.el-input {
+  &--medium {
+    .el-input__inner {
+      @apply px-5;
     }
   }
 }
 
-// COMMON
-.flex-box {
-  display: flex;
-  align-items: center;
-
-  &.space-btw {
-    justify-content: space-between;
-  }
-
-  &.end {
-    justify-content: flex-end;
-  }
-
-  &.center {
-    justify-content: center;
-  }
+// Form
+.el-form-item {
+  @apply mb-6;
 }

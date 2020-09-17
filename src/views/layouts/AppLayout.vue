@@ -1,18 +1,13 @@
 <template>
-  <el-container
-    class="app-wrapper"
-    direction="vertical"
-  >
-    <app-navbar
+  <el-container>
+    <!-- <app-navbar
       class="nav-container"
       @toggleSidebar="toggleSidebar"
-    />
-    <el-container>
-      <app-sidebar
-        ref="sidebar"
-        class="sidebar-container"
-      />
-      <app-main class="main-container" />
+    /> -->
+    <app-sidebar ref="sidebar" />
+    <el-container direction="vertical">
+      <app-navbar @toggleSidebar="toggleSidebar" />
+      <app-main />
     </el-container>
   </el-container>
 </template>

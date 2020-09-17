@@ -26,6 +26,17 @@ $--background-color-base: $--color-netural-10;
 
 $--border-radius-base: $--borderRadius-sm;
 
+/* Input */
+$--input-height: 40px;
+
+/// fontSize||Font|1
+$--input-medium-font-size: $--fontSize-base;
+$--input-medium-height: 48px;
+$--input-small-font-size: $--fontSize-sm;
+$--input-small-height: 32px;
+$--input-mini-font-size: $--fontSize-sm;
+$--input-mini-height: 24px;
+
 /* icon font path, required */
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
 

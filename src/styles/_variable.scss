@@ -130,6 +130,18 @@ $--shadow-inner:   inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
 $--shadow-outline: 0 0 0 3px rgba($--color-brand-500, 0.5);
 $--shadow-none:    none;
 
+/* Font Size */
+$--fontSize-xs: 0.75rem;
+$--fontSize-sm: 0.875rem;
+$--fontSize-base: 1rem;
+$--fontSize-lg: 1.125rem;
+$--fontSize-xl: 1.25rem;
+$--fontSize-2xl: 1.5rem;
+$--fontSize-3xl: 1.875rem;
+$--fontSize-4xl: 2.25rem;
+$--fontSize-5xl: 3rem;
+$--fontSize-6xl: 4rem;
+
 /*
   Border Radius
   The default radius for element-UI is 2px.
@@ -274,11 +286,22 @@ $--borderRadius-full:    9999px;
   --shadow-none:    #{$--shadow-none};
   
   // Border Radius
-  /* Border Radius */
   --borderRadius-none:    #{$--borderRadius-none};
   --borderRadius-sm:      #{$--borderRadius-sm};
   --borderRadius-default: #{$--borderRadius-default};
   --borderRadius-md:      #{$--borderRadius-md};
   --borderRadius-lg:      #{$--borderRadius-lg};
   --borderRadius-full:    #{$--borderRadius-full};
+
+  // Font Size
+  --fontSize-xs:   #{$--fontSize-xs};
+  --fontSize-sm:   #{$--fontSize-sm};
+  --fontSize-base: #{$--fontSize-base};
+  --fontSize-lg:   #{$--fontSize-lg};
+  --fontSize-xl:   #{$--fontSize-xl};
+  --fontSize-2xl:  #{$--fontSize-2xl};
+  --fontSize-3xl:  #{$--fontSize-3xl};
+  --fontSize-4xl:  #{$--fontSize-4xl};
+  --fontSize-5xl:  #{$--fontSize-5xl};
+  --fontSize-6xl:  #{$--fontSize-6xl};
 }

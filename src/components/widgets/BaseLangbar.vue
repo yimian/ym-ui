@@ -1,17 +1,16 @@
 <template>
-  <div class="change-lang">
-    <span
+  <div class="flex items-center -mr-1 leading-4 text-sm text-netural-70">
+    <button
       @click="switchLang('zh-CN')"
-      :class="{ 'active-lang': currentLang === 'zh-CN' }"
-    >
+      :class="{ 'text-brand-600': currentLang === 'zh-CN' }">
       中文
-    </span> /
-    <span
+    </button>
+    /
+    <button
       @click="switchLang('en')"
-      :class="{ 'active-lang': currentLang === 'en' }"
-    >
+      :class="{ 'text-brand-600': currentLang === 'en' }">
       En
-    </span>
+    </button>
   </div>
 </template>
 
@@ -32,3 +31,12 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+  button {
+    @apply px-1 py-2 text-netural-600;
+
+    &:focus {
+      @apply outline-none;
+    }
+  }
+</style>

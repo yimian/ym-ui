@@ -1,14 +1,31 @@
 <template>
-  <el-aside width="">
+  <el-aside class="w-64 bg-brand-700">
+    <header class="flex items-center justify-between p-4">
+      <router-link
+        :to="{ path: '/' }"
+        aria-label="Home">
+        <img
+          class="h-6"
+          src="@/assets/logo.svg"
+          alt="Product Logo">
+      </router-link>
+      <!-- <el-button
+        class="p-1 text-white border-none hover:bg-brand-600 focus:bg-brand-800 outline-none"
+        type="text"
+        @click.stop="$emit('toggleSidebar')"
+        aria-label="Menu"
+        aria-haspopup="true"
+      >
+        <ym-svg class="w-6 h-6" svgName="menu" />
+      </el-button> -->
+    </header>
     <el-menu
+      class="bg-transparent border-none"
       default-active="1-4-1"
-      class="el-menu-vertical-demo"
       :collapse="!drawer"
     >
-      <el-submenu
-        index="1"
-        :style="{ width: drawer ? '199px' : '60px' }"
-      >
+      <!-- :style="{ width: drawer ? '199px' : '60px' }" -->
+      <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>
           <span slot="title">导航一</span>
@@ -62,8 +79,13 @@ export default {
 };
 </script>
 
-<style>
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 200px;
+<style lang="scss">
+@import '@/styles/_variable.scss';
+
+// Override the 'background-color: white' of el-menu that locate in el-submenu
+.el-submenu {
+  .el-menu {
+    @apply bg-transparent;
+  }
 }
 </style>
