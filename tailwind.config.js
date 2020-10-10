@@ -8,21 +8,21 @@ module.exports = {
       black: "#000",
       white: "#fff",
 
-      netural: {
-        10: "var(--color-netural-10)",
-        20: "var(--color-netural-20)",
-        30: "var(--color-netural-30)",
-        40: "var(--color-netural-40)",
-        50: "var(--color-netural-50)",
-        60: "var(--color-netural-60)",
-        70: "var(--color-netural-70)",
-        300: "var(--color-netural-300)",
-        400: "var(--color-netural-400)",
-        500: "var(--color-netural-500)",
-        600: "var(--color-netural-600)",
-        700: "var(--color-netural-700)",
-        800: "var(--color-netural-800)",
-        900: "var(--color-netural-900)"
+      neutral: {
+        10: "var(--color-neutral-10)",
+        20: "var(--color-neutral-20)",
+        30: "var(--color-neutral-30)",
+        40: "var(--color-neutral-40)",
+        50: "var(--color-neutral-50)",
+        60: "var(--color-neutral-60)",
+        70: "var(--color-neutral-70)",
+        300: "var(--color-neutral-300)",
+        400: "var(--color-neutral-400)",
+        500: "var(--color-neutral-500)",
+        600: "var(--color-neutral-600)",
+        700: "var(--color-neutral-700)",
+        800: "var(--color-neutral-800)",
+        900: "var(--color-neutral-900)"
       },
 
       brand: {
@@ -83,6 +83,18 @@ module.exports = {
         700: "var(--color-ascential-700)",
         800: "var(--color-ascential-800)",
         900: "var(--color-ascential-900)"
+      },
+
+      orange: {
+        100: "var(--color-orange-100)",
+        200: "var(--color-orange-200)",
+        300: "var(--color-orange-300)",
+        400: "var(--color-orange-400)",
+        500: "var(--color-orange-500)",
+        600: "var(--color-orange-600)",
+        700: "var(--color-orange-700)",
+        800: "var(--color-orange-800)",
+        900: "var(--color-orange-900)"
       },
 
       red: {

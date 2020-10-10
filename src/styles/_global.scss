@@ -5,8 +5,15 @@
 
 // Button
 .el-button {
+  &--medium {
+    @apply px-4 leading-5;
+    
+    padding-top: 13px;
+    padding-bottom: 13px;
+  }
+
   span {
-    @apply flex items-center;
+    @apply flex items-center justify-center;
   }
 }
 
@@ -17,9 +24,13 @@
 
 // Input
 .el-input {
+
   &--medium {
     .el-input__inner {
       @apply px-5;
+    }
+    .el-input__suffix {
+      right: 12px;
     }
   }
 }

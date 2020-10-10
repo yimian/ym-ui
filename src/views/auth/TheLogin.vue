@@ -1,67 +1,161 @@
 <template>
-  <div class="flex h-screen">
-    <!-- Form -->
-    <section class="flex-1 max-w-xl p-6 bg-white">
-      <div class="flex flex-col justify-between max-w-sm h-full mx-auto">
-        <header class="flex justify-between">
-          <img class="h-8" src="@/assets/logo.svg" alt="Product Logo">
-          <base-langbar/>
-        </header>
-        <el-form>
-          <h1 class="mb-8 leading-snug text-4xl font-semibold text-netural-500">
-            {{ $t('common.loginN') }}
-          </h1>
-          <!-- <p>Don’t have an account? <el-button type="text">Create your account</el-button></p> -->
-          <el-form-item>
-            <el-input
-              size="medium"
-              clearable
-              :placeholder="$t('common.username')"
-              v-model="form.username"
-              @keyup.enter.native="login"
-            ></el-input>
-          </el-form-item>
-          <el-form-item>
-            <el-input
-              size="medium"
-              show-password
-              :placeholder="$t('common.password')"
-              v-model="form.password"
-              type="password"
-              @keyup.enter.native="login">
-            </el-input>
-          </el-form-item>
-          <el-form-item class="mb-0">
-            <div class="flex justify-between">
+  <!-- Login -->
+  <div class="login">
+    <!-- Main Section -->
+    <section class="login__main">
+      <div class="login__main-form">
+        <div style="width: 100%">
+          <!-- Header -->
+          <header class="login__main-formHeader">
+            <!-- Logo -->
+            <img
+              style="height: 32px"
+              src="@/assets/logo-yidrone.svg"
+              alt="Product Logo">
+            <!-- Language Switcher -->
+            <base-langbar/>
+          </header>
+        </div>
+        <!-- Body -->
+        <div style="width: 100%">
+          <div class="login__main-formBody">
+            <h1 class="login__main-formBodyTitle">
+              {{ $t('common.loginN') }}
+              <span>微信快捷登录，安全高效</span>
+            </h1>
+            <!-- Log in with account and password -->
+            <el-form>
+              <el-form-item>
+                <el-input
+                  size="medium"
+                  clearable
+                  :placeholder="$t('common.username')"
+                  v-model="form.username"
+                  @keyup.enter.native="login"
+                ></el-input>
+              </el-form-item>
+              <el-form-item>
+                <el-input
+                  size="medium"
+                  show-password
+                  :placeholder="$t('common.password')"
+                  v-model="form.password"
+                  type="password"
+                  @keyup.enter.native="login">
+                </el-input>
+              </el-form-item>
+              <el-form-item>
+                <div class="login__main-submitBtnGroups">
+                  <el-button
+                    type="text"
+                    @click="redirectForgotPassword">
+                    {{ $t('common.forgetPassword') }}
+                  </el-button>
+                  <el-button
+                    class="login__main-submitBtn"
+                    type="primary"
+                    size="medium"
+                    :disabled="loginLoading"
+                    @click="login">
+                    {{ $t('common.login') }}
+                    <i
+                      v-if="loginLoading"
+                      class="el-icon-loading"
+                    ></i>
+                  </el-button>
+                </div>
+              </el-form-item>
+            </el-form>
+            <!-- Log in with another ways -->
+            <div
+              v-if="showShortcuts"
+              class="login__main-shortcuts">
+              <!-- Divider -->
+              <div class="login__divider">
+                <div class="login__divider-line"></div>
+                <div class="login__divider-text">{{ $t('common.or') }}</div>
+                <div class="login__divider-line"></div>
+              </div>
+              <!-- Log in with wechat -->
               <el-button
-                type="text"
-                @click="redirectForgotPassword">
-                {{ $t('common.forgetPassword') }}
+                class="login-shortcut wechat"
+                size="medium">
+                <div class="login-shortcut__icon">
+                  <ym-svg svgName="wechat" />
+                </div>
+                {{ $t('common.loginWithWechat') }}
               </el-button>
               <el-button
-                type="primary"
+                class="login-shortcut wechat"
                 size="medium"
-                :disabled="loginLoading"
-                @click="login">
-                <ym-svg svgName="setting" className="w-5 h-5" />
-                {{ $t('common.login') }}
-                <i
-                  v-if="loginLoading"
-                  class="el-icon-loading"
-                ></i>
+                type="success">
+                <div class="login-shortcut__icon">
+                  <ym-svg svgName="wechat" />
+                </div>
+                {{ $t('common.loginWithWechat') }}
               </el-button>
+              <div style="text-align: right">
+                <el-button
+                  type="text"
+                  @click="redirectForgotPassword">
+                  首次账号登录
+                </el-button>
+              </div>
             </div>
-          </el-form-item>
-        </el-form>
-        <footer class="text-center text-xs text-netural-70">
+          </div>
+        </div>
+        <!-- Footer -->
+        <footer class="login__main-footer">
           {{ $t('common.copyrightMessage', { currentYear }) }}
         </footer>
       </div>
     </section>
     <!-- Slogan & Images -->
-    <section class="hidden flex-1">
-      <h1>让决策更智能</h1>
+    <section class="login__slogan">
+      <div class="login__slogan-bg">
+        <img
+          src="@/assets/login-bg-yidrone.jpg"
+          alt="Background Image">
+      </div>
+      <div class="login__slogan-text">
+        <h1 class="login__slogan-textTitle">了解行业竞争格局<br>发现蓝海</h1>
+        <!-- <p class="login__slogan-textDescr">为消费品企业提供全面、精准、实时的商业洞察和决策指导</p> -->
+      </div>
     </section>
+    <!-- Account Connection -->
+    <div style="display: none" class="acConnect">
+      <div class="acConnect__imgs">
+        <div class="acConnect__imgs-item">
+          <ym-svg svgName="wechat" className="h-12 w-12 text-green-400" />
+        </div>
+        <svg class="acConnect__imgs-arrow" width="37" height="18" viewBox="0 0 37 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M5.96036 16.9425L3.45569 14.25H36.2239V12.75H3.45569L5.96036 10.0575L4.97389 9L0.776123 13.5L4.97389 18L5.96036 16.9425ZM36.2239 4.5L32.0261 0L31.0397 1.0575L33.5443 3.75H0.776123V5.25H33.5443L31.0397 7.9425L32.0261 9L36.2239 4.5Z" />
+        </svg>
+        <div class="acConnect__imgs-item">
+          <img width="48" src="@/assets/logomark-yidrone.svg" alt="Logomark">
+        </div>
+      </div>
+      <div class="acConnect__text">
+        <h1 class="acConnect__text-title">登录成功</h1>
+        <p class="acConnect__text-descr">Yimian 将申请使用您的微信 vasttian 进行绑定，以便下次快捷登录</p>
+      </div>
+      <div class="acConnect__btns">
+        <el-button
+          class="acConnect__btns-item"
+          size="medium"
+          type="primary">
+          绑定
+        </el-button>
+        <div class="acConnect__btns-cancel">
+          <el-button
+            class="acConnect__btns-item"
+            size="medium">
+            取消
+          </el-button>
+          <p class="acConnect__btns-cancelDescr">如需切换账号，请取消绑定并重新授权</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -83,6 +177,7 @@ export default {
       },
       loginLoading: false,
       currentLang: this.$i18n.locale,
+      showShortcuts: true,
     };
   },
   computed: {

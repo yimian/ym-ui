@@ -3,21 +3,21 @@
 */
 
 /* SASS Variables */
-// Neturals
-$--color-netural-10:  #F3F4F6;
-$--color-netural-20:  #E5E7EB;
-$--color-netural-30:  #D1D5DC;
-$--color-netural-40:  #BEC4CE;
-$--color-netural-50:  #AFB7C3;
-$--color-netural-60:  #9EA7B6;
-$--color-netural-70:  #8C97A9;
-$--color-netural-300: #7D899D;
-$--color-netural-400: #6D7B91;
-$--color-netural-500: #55647C;
-$--color-netural-600: #3D4D68;
-$--color-netural-700: #253753;
-$--color-netural-800: #253753;
-$--color-netural-900: #051123;
+// neutrals
+$--color-neutral-10:  #F3F4F6;
+$--color-neutral-20:  #E5E7EB;
+$--color-neutral-30:  #D1D5DC;
+$--color-neutral-40:  #BEC4CE;
+$--color-neutral-50:  #AFB7C3;
+$--color-neutral-60:  #9EA7B6;
+$--color-neutral-70:  #8C97A9;
+$--color-neutral-300: #7D899D;
+$--color-neutral-400: #6D7B91;
+$--color-neutral-500: #55647C;
+$--color-neutral-600: #3D4D68;
+$--color-neutral-700: #253753;
+$--color-neutral-800: #253753;
+$--color-neutral-900: #051123;
 
 // Brand
 $--color-brand-100: #EBF4FF;
@@ -158,21 +158,21 @@ $--borderRadius-full:    9999px;
 
 /* CSS Variables */
 :root {
-  // Neturals
-  --color-netural-10:  #{$--color-netural-10};
-  --color-netural-20:  #{$--color-netural-20};
-  --color-netural-30:  #{$--color-netural-30};
-  --color-netural-40:  #{$--color-netural-40};
-  --color-netural-50:  #{$--color-netural-50};
-  --color-netural-60:  #{$--color-netural-60};
-  --color-netural-70:  #{$--color-netural-70};
-  --color-netural-300: #{$--color-netural-300};
-  --color-netural-400: #{$--color-netural-400};
-  --color-netural-500: #{$--color-netural-500};
-  --color-netural-600: #{$--color-netural-600};
-  --color-netural-700: #{$--color-netural-700};
-  --color-netural-800: #{$--color-netural-800};
-  --color-netural-900: #{$--color-netural-900};
+  // neutrals
+  --color-neutral-10:  #{$--color-neutral-10};
+  --color-neutral-20:  #{$--color-neutral-20};
+  --color-neutral-30:  #{$--color-neutral-30};
+  --color-neutral-40:  #{$--color-neutral-40};
+  --color-neutral-50:  #{$--color-neutral-50};
+  --color-neutral-60:  #{$--color-neutral-60};
+  --color-neutral-70:  #{$--color-neutral-70};
+  --color-neutral-300: #{$--color-neutral-300};
+  --color-neutral-400: #{$--color-neutral-400};
+  --color-neutral-500: #{$--color-neutral-500};
+  --color-neutral-600: #{$--color-neutral-600};
+  --color-neutral-700: #{$--color-neutral-700};
+  --color-neutral-800: #{$--color-neutral-800};
+  --color-neutral-900: #{$--color-neutral-900};
 
   // Brand
   --color-brand-100:  #{$--color-brand-100};

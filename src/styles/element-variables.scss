@@ -12,17 +12,17 @@ $--color-primary: $--color-brand-500;
 $--color-success: $--color-green-500;
 $--color-warning: $--color-orange-500;
 $--color-danger: $--color-red-500;
-$--color-info: $--color-netural-70;
+$--color-info: $--color-neutral-70;
 
-$--color-text-primary: $--color-netural-800;
-$--color-text-regular: $--color-netural-600;
-$--color-text-secondary: $--color-netural-70;
-$--color-text-placeholder: $--color-netural-40;
-$--border-color-base: $--color-netural-30;
-$--border-color-light: $--color-netural-20;
-$--border-color-lighter: $--color-netural-10;
+$--color-text-primary: $--color-neutral-800;
+$--color-text-regular: $--color-neutral-600;
+$--color-text-secondary: $--color-neutral-70;
+$--color-text-placeholder: $--color-neutral-40;
+$--border-color-base: $--color-neutral-30;
+$--border-color-light: $--color-neutral-20;
+$--border-color-lighter: $--color-neutral-10;
 
-$--background-color-base: $--color-netural-10;
+$--background-color-base: $--color-neutral-10;
 
 $--border-radius-base: $--borderRadius-sm;
 
@@ -36,6 +36,8 @@ $--input-small-font-size: $--fontSize-sm;
 $--input-small-height: 32px;
 $--input-mini-font-size: $--fontSize-sm;
 $--input-mini-height: 24px;
+
+$--button-medium-font-size: $--fontSize-base;
 
 /* icon font path, required */
 $--font-path: '~element-ui/lib/theme-chalk/fonts';

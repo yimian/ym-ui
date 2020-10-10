@@ -52,6 +52,10 @@ export default {
       en: 'Log In',
       'zh-CN': '登录',
     },
+    loginWithWechat: {
+      en: 'Log in with WeChat',
+      'zh-CN': '通过微信登录',
+    },
     logout: {
       en: 'Log Out',
       'zh-CN': '退出登录',
@@ -132,9 +136,13 @@ export default {
       en: 'All',
       'zh-CN': '全部',
     },
+    or: {
+      en: 'Or',
+      'zh-CN': '或',
+    },
     copyrightMessage: {
-      en: '© 2014 - {currentYear} Shenzhen Yimian Network Technology Co.,Ltd.',
-      'zh-CN': '© 2014 - {currentYear} 深圳市一面网络技术有限公司 粤 ICP 备 14054704 号 - 4',
+      en: '©2014–{currentYear} Shenzhen Yimian Network Technology Co.,Ltd.',
+      'zh-CN': '©2014-{currentYear} 深圳市一面网络技术有限公司 粤 ICP 备 14054704 号 - 4',
     },
   },
   rules: {

@@ -13,6 +13,7 @@ import './plugins/element';
 import './plugins/echarts';
 import './plugins/ym-svg-sprite';
 import './styles/index.scss';
+import './styles/tailwind.css';
 
 Vue.router = router;
 Vue.store = store;

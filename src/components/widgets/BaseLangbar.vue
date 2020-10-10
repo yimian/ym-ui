@@ -1,14 +1,20 @@
 <template>
-  <div class="flex items-center -mr-1 leading-4 text-sm text-netural-70">
+  <!-- Language Switcher -->
+  <div class="langSwitcher">
+    <!-- Item -->
     <button
+      class="langSwitcher__item"
       @click="switchLang('zh-CN')"
-      :class="{ 'text-brand-600': currentLang === 'zh-CN' }">
+      :class="{ 'langSwitcher__item--active': currentLang === 'zh-CN' }">
       中文
     </button>
-    /
+    <!-- Divider -->
+    <span>/</span>
+    <!-- Item -->
     <button
+      class="langSwitcher__item"
       @click="switchLang('en')"
-      :class="{ 'text-brand-600': currentLang === 'en' }">
+      :class="{ 'langSwitcher__item--active': currentLang === 'en' }">
       En
     </button>
   </div>
@@ -32,11 +38,29 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-  button {
-    @apply px-1 py-2 text-netural-600;
+$--color-neutral-70:  #8C97A9;
+$--color-neutral-600: #3D4D68;
+$--color-brand-600: #1C72E3;
 
-    &:focus {
-      @apply outline-none;
+  .langSwitcher {
+    display: flex;
+    align-items: center;
+    margin-right: -0.25rem;
+    line-height: 1rem;
+    font-size: 14px;
+    color: $--color-neutral-70;
+
+    &__item {
+      padding: 0.5rem 0.25rem;
+      color: $--color-neutral-600;
+
+      &:focus {
+        outline: none;
+      }
+
+      &--active {
+        color: $--color-brand-600;
+      }
     }
   }
 </style>
