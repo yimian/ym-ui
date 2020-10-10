@@ -2,7 +2,7 @@ $--maxWidth-sm: 24rem;
 $--lineHeight-snug: 1.375;
 $--fontSize-4xl: 2.25rem;
 $--text-neutral-500: #55647C;
-$--text-neutral-600: #3D4D68;
+$--color-neutral-600: #3D4D68;
 $--color-neutral-800: #253753;
 $--color-neutral-70: #8C97A9;
 $--text-green-400: #5CC980;
@@ -173,8 +173,9 @@ $--rounded: 0.25rem;
 
     &-textTitle {
       margin-bottom: 1rem;
-      font-size: 4rem;
       line-height: 1.375;
+      font-size: 4rem;
+      font-weight: 400;
     }
 
     &-textDescr {
@@ -203,7 +204,7 @@ $--rounded: 0.25rem;
     .wechat.el-button--success & {
       color: white;
     }
-    
+
     svg {
       width: 1.25rem;
       height: 1.25rem;
