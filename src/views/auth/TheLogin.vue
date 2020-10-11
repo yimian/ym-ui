@@ -11,9 +11,10 @@
             <img
               style="height: 32px"
               src="@/assets/logo-yidrone.svg"
-              alt="Product Logo">
+              alt="Product Logo"
+            >
             <!-- Language Switcher -->
-            <base-langbar/>
+            <base-langbar />
           </header>
         </div>
         <!-- Body -->
@@ -27,22 +28,22 @@
             <el-form>
               <el-form-item>
                 <el-input
+                  v-model="form.username"
                   size="medium"
                   clearable
                   :placeholder="$t('common.username')"
-                  v-model="form.username"
                   @keyup.enter.native="login"
-                ></el-input>
+                />
               </el-form-item>
               <el-form-item>
                 <el-input
+                  v-model="form.password"
                   size="medium"
                   show-password
                   :placeholder="$t('common.password')"
-                  v-model="form.password"
                   type="password"
-                  @keyup.enter.native="login">
-                </el-input>
+                  @keyup.enter.native="login"
+                />
               </el-form-item>
               <el-form-item>
                 <div class="login__main-submitBtnGroups">
@@ -56,7 +57,8 @@
                     type="primary"
                     size="medium"
                     :disabled="loginLoading"
-                    @click="login">
+                    @click="login"
+                  >
                     {{ $t('common.login') }}
                     <i
                       v-if="loginLoading"
@@ -69,35 +71,39 @@
             <!-- Log in with another ways -->
             <div
               v-if="showShortcuts"
-              class="login__main-shortcuts">
+              class="login__main-shortcuts"
+            >
               <!-- Divider -->
               <div class="login__divider">
-                <div class="login__divider-line"></div>
+                <div class="login__divider-line" />
                 <div class="login__divider-text">{{ $t('common.or') }}</div>
-                <div class="login__divider-line"></div>
+                <div class="login__divider-line" />
               </div>
               <!-- Log in with wechat -->
               <el-button
                 class="login-shortcut wechat"
-                size="medium">
+                size="medium"
+              >
                 <div class="login-shortcut__icon">
-                  <ym-svg svgName="wechat" />
+                  <ym-svg svg-name="wechat" />
                 </div>
                 {{ $t('common.loginWithWechat') }}
               </el-button>
               <el-button
                 class="login-shortcut wechat"
                 size="medium"
-                type="success">
+                type="success"
+              >
                 <div class="login-shortcut__icon">
-                  <ym-svg svgName="wechat" />
+                  <ym-svg svg-name="wechat" />
                 </div>
                 {{ $t('common.loginWithWechat') }}
               </el-button>
               <div style="text-align: right">
                 <el-button
                   type="text"
-                  @click="redirectForgotPassword">
+                  @click="redirectForgotPassword"
+                >
                   首次账号登录
                 </el-button>
               </div>
@@ -115,24 +121,40 @@
       <div class="login__slogan-bg">
         <img
           src="@/assets/login-bg-yidrone.jpg"
-          alt="Background Image">
+          alt="Background Image"
+        >
       </div>
       <div class="login__slogan-text">
-        <h1 class="login__slogan-textTitle">了解行业竞争格局<br>发现蓝海</h1>
+        <h1 class="login__slogan-textTitle">
+          了解行业竞争格局
+          <br>
+          发现蓝海
+        </h1>
         <!-- <p class="login__slogan-textDescr">为消费品企业提供全面、精准、实时的商业洞察和决策指导</p> -->
       </div>
     </section>
+
     <!-- Account Connection -->
-    <div style="display: none" class="acConnect">
+    <div class="acConnect" style="display: none">
       <div class="acConnect__imgs">
         <div class="acConnect__imgs-item">
-          <ym-svg svgName="wechat" className="h-12 w-12 text-green-400" />
+          <ym-svg
+            svg-name="wechat"
+            class-name="h-12 w-12 text-green-400"
+          />
         </div>
-        <svg class="acConnect__imgs-arrow" width="37" height="18" viewBox="0 0 37 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M5.96036 16.9425L3.45569 14.25H36.2239V12.75H3.45569L5.96036 10.0575L4.97389 9L0.776123 13.5L4.97389 18L5.96036 16.9425ZM36.2239 4.5L32.0261 0L31.0397 1.0575L33.5443 3.75H0.776123V5.25H33.5443L31.0397 7.9425L32.0261 9L36.2239 4.5Z" />
-        </svg>
+        <!-- or use svg-injector -->
+        <!-- https://github.com/iconfu/svg-inject -->
+        <img
+          class="acConnect__imgs-arrow"
+          src="@/assets/arrows-horizontal.svg"
+        >
         <div class="acConnect__imgs-item">
-          <img width="48" src="@/assets/logomark-yidrone.svg" alt="Logomark">
+          <img
+            width="48"
+            src="@/assets/logomark-yidrone.svg"
+            alt="Logomark"
+          >
         </div>
       </div>
       <div class="acConnect__text">
@@ -143,13 +165,15 @@
         <el-button
           class="acConnect__btns-item"
           size="medium"
-          type="primary">
+          type="primary"
+        >
           绑定
         </el-button>
         <div class="acConnect__btns-cancel">
           <el-button
             class="acConnect__btns-item"
-            size="medium">
+            size="medium"
+          >
             取消
           </el-button>
           <p class="acConnect__btns-cancelDescr">如需切换账号，请取消绑定并重新授权</p>
@@ -177,7 +201,8 @@ export default {
       },
       loginLoading: false,
       currentLang: this.$i18n.locale,
-      showShortcuts: true,
+      // showShortcuts: true,
+      showShortcuts: false,
     };
   },
   computed: {

@@ -5,7 +5,8 @@
     <button
       class="langSwitcher__item"
       @click="switchLang('zh-CN')"
-      :class="{ 'langSwitcher__item--active': currentLang === 'zh-CN' }">
+      :class="{ 'langSwitcher__item--active': currentLang === 'zh-CN' }"
+    >
       中文
     </button>
     <!-- Divider -->
@@ -14,7 +15,8 @@
     <button
       class="langSwitcher__item"
       @click="switchLang('en')"
-      :class="{ 'langSwitcher__item--active': currentLang === 'en' }">
+      :class="{ 'langSwitcher__item--active': currentLang === 'en' }"
+    >
       En
     </button>
   </div>
