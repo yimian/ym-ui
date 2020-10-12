@@ -262,12 +262,15 @@ $--rounded: 0.25rem;
     color: $--color-neutral-800;
 
     &-title {
+      margin-top: 0;
+      margin-bottom: 0;
       font-size: 1.5rem;
       font-weight: 500;
     }
 
     &-descr {
       margin-top: 0.75rem;
+      margin-bottom: 0;
     }
   }
 
@@ -284,6 +287,7 @@ $--rounded: 0.25rem;
 
     &-cancelDescr {
       margin-top: 0.5rem;
+      margin-bottom: 0;
       font-size: 0.875rem;
       text-align: center;
       color: $--color-neutral-70;

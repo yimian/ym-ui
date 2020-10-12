@@ -2,7 +2,7 @@
   <!-- Login -->
   <div class="login">
     <!-- Main Section -->
-    <section class="login__main">
+    <section  style="display: none" class="login__main">
       <div class="login__main-form">
         <div style="width: 100%">
           <!-- Header -->
@@ -117,7 +117,7 @@
       </div>
     </section>
     <!-- Slogan & Images -->
-    <section class="login__slogan">
+    <section  style="display: none" class="login__slogan">
       <div class="login__slogan-bg">
         <img
           src="@/assets/login-bg-yidrone.jpg"
@@ -135,7 +135,7 @@
     </section>
 
     <!-- Account Connection -->
-    <div class="acConnect" style="display: none">
+    <div class="acConnect">
       <div class="acConnect__imgs">
         <div class="acConnect__imgs-item">
           <ym-svg
