@@ -1,13 +1,16 @@
 module.exports = {
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true
+  },
   purge: [],
+  important: true,
   theme: {
     colors: {
       transparent: "transparent",
       current: "currentColor",
-
       black: "#000",
       white: "#fff",
-
       neutral: {
         10: "var(--color-neutral-10)",
         20: "var(--color-neutral-20)",
@@ -24,7 +27,6 @@ module.exports = {
         800: "var(--color-neutral-800)",
         900: "var(--color-neutral-900)"
       },
-
       brand: {
         100: "var(--color-brand-100)",
         200: "var(--color-brand-200)",
@@ -36,7 +38,6 @@ module.exports = {
         800: "var(--color-brand-800)",
         900: "var(--color-brand-900)"
       },
-
       skyblue: {
         100: "var(--color-skyblue-100)",
         200: "var(--color-skyblue-200)",
@@ -48,7 +49,6 @@ module.exports = {
         800: "var(--color-skyblue-800)",
         900: "var(--color-skyblue-900)"
       },
-
       teal: {
         100: "var(--color-teal-100)",
         200: "var(--color-teal-200)",
@@ -60,7 +60,6 @@ module.exports = {
         800: "var(--color-teal-800)",
         900: "var(--color-teal-900)"
       },
-
       green: {
         100: "var(--color-green-100)",
         200: "var(--color-green-200)",
@@ -72,7 +71,6 @@ module.exports = {
         800: "var(--color-green-800)",
         900: "var(--color-green-900)"
       },
-
       ascential: {
         100: "var(--color-ascential-100)",
         200: "var(--color-ascential-200)",
@@ -84,7 +82,6 @@ module.exports = {
         800: "var(--color-ascential-800)",
         900: "var(--color-ascential-900)"
       },
-
       orange: {
         100: "var(--color-orange-100)",
         200: "var(--color-orange-200)",
@@ -96,7 +93,6 @@ module.exports = {
         800: "var(--color-orange-800)",
         900: "var(--color-orange-900)"
       },
-
       red: {
         100: "var(--color-red-100)",
         200: "var(--color-red-200)",
@@ -108,7 +104,6 @@ module.exports = {
         800: "var(--color-red-800)",
         900: "var(--color-red-900)"
       },
-
       pink: {
         100: "var(--color-pink-100)",
         200: "var(--color-pink-200)",
@@ -120,7 +115,6 @@ module.exports = {
         800: "var(--color-pink-800)",
         900: "var(--color-pink-900)"
       },
-
       purple: {
         100: "var(--color-purple-100)",
         200: "var(--color-purple-200)",
@@ -133,7 +127,6 @@ module.exports = {
         900: "var(--color-purple-900)"
       }
     },
-
     boxShadow: {
       xs: "var(--shadow-xs)",
       sm: "var(--shadow-sm)",
@@ -146,7 +139,6 @@ module.exports = {
       outline: "var(--shadow-outline)",
       none: "var(--shadow-none)"
     },
-
     fontFamily: {
       sans: [
         "system-ui",
@@ -169,32 +161,19 @@ module.exports = {
         '"Noto Color Emoji"'
       ]
     },
-
     borderRadius: {
       none: "var(--borderRadius-none)",
       sm: "var(--borderRadius-sm)",
       default: "var(--borderRadius-default)",
       md: "var(--borderRadius-md)",
       lg: "var(--borderRadius-lg)",
+      xl: "var(--borderRadius-xl)",
+      "2xl": "var(--borderRadius-2xl)",
+      "3xl": "var(--borderRadius-3xl)",
       full: "var(--borderRadius-full)"
     },
-
     extend: {},
   },
   variants: {},
   plugins: [],
-
-  /** https://tailwindcss.com/docs/upcoming-changes
-   * Remove deprecated gap utilities
-   * Purge layers by default
-   */
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true
-  },
-
-  /** https://tailwindcss.com/docs/configuration#important
-   * The important option lets you control whether or not Tailwind's utilities should be marked with !important.
-   */
-  important: true
 };

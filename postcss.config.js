@@ -5,5 +5,5 @@ const postcsscustomproperties = require("postcss-custom-properties")();
 const autoprefixer = require("autoprefixer")();
 
 module.exports = {
-  plugins: [postcssimport ,tailwindcss, postcssnested, postcsscustomproperties, autoprefixer]
+  plugins: [postcssimport, tailwindcss, postcssnested, postcsscustomproperties, autoprefixer]
 };
