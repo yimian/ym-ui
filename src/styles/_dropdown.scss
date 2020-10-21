@@ -1,0 +1,11 @@
+.el-dropdown-menu {
+  @apply py-2 border-neutral-20;
+
+  &__item {
+    @apply px-4;
+
+    &--divided:before {
+      @apply -mx-4;
+    }
+  }
+}

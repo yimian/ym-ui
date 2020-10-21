@@ -2,7 +2,7 @@
   <!-- Login -->
   <div class="login">
     <!-- Main Section -->
-    <section  style="display: none" class="login__main">
+    <section class="login__main">
       <div class="login__main-form">
         <div style="width: 100%">
           <!-- Header -->
@@ -10,11 +10,15 @@
             <!-- Logo -->
             <img
               style="height: 32px"
-              src="@/assets/logo-yidrone.svg"
+              src="@/assets/logo.svg"
               alt="Product Logo"
             >
             <!-- Language Switcher -->
-            <base-langbar />
+            <base-langbar class="-m-4" placement="bottom">
+              <div class="pl-1">
+                <ym-svg svg-name="chevron-down" class="w-4 h-4" />
+              </div>
+            </base-langbar>
           </header>
         </div>
         <!-- Body -->
@@ -22,10 +26,10 @@
           <div class="login__main-formBody">
             <h1 class="login__main-formBodyTitle">
               {{ $t('common.loginN') }}
-              <span>微信快捷登录，安全高效</span>
+              <span v-if="showShortcuts">{{ $t('thirdPartyLogin.wechatLoginSlogan') }}</span>
             </h1>
             <!-- Log in with account and password -->
-            <el-form>
+            <el-form v-if="!showShortcuts">
               <el-form-item>
                 <el-input
                   v-model="form.username"
@@ -70,43 +74,52 @@
             </el-form>
             <!-- Log in with another ways -->
             <div
-              v-if="showShortcuts"
+              v-if="allowWechatLogin || showShortcuts"
               class="login__main-shortcuts"
             >
-              <!-- Divider -->
-              <div class="login__divider">
-                <div class="login__divider-line" />
-                <div class="login__divider-text">{{ $t('common.or') }}</div>
-                <div class="login__divider-line" />
-              </div>
-              <!-- Log in with wechat -->
-              <el-button
-                class="login-shortcut wechat"
-                size="medium"
-              >
-                <div class="login-shortcut__icon">
-                  <ym-svg svg-name="wechat" />
-                </div>
-                {{ $t('common.loginWithWechat') }}
-              </el-button>
-              <el-button
-                class="login-shortcut wechat"
-                size="medium"
-                type="success"
-              >
-                <div class="login-shortcut__icon">
-                  <ym-svg svg-name="wechat" />
-                </div>
-                {{ $t('common.loginWithWechat') }}
-              </el-button>
-              <div style="text-align: right">
+              <template v-if="showShortcuts">
                 <el-button
-                  type="text"
-                  @click="redirectForgotPassword"
+                  class="login-shortcut wechat"
+                  size="medium"
+                  type="success"
+                  :disabled="loginLoading"
+                  @click="weChatLogin"
                 >
-                  首次账号登录
+                  <div class="login-shortcut__icon">
+                    <ym-svg svg-name="wechat" />
+                  </div>
+                  {{ $t('common.loginWithWechat') }}
                 </el-button>
-              </div>
+                <div style="text-align: right">
+                  <el-button
+                    type="text"
+                    @click="showShortcuts = false;"
+                  >
+                    {{ $t('common.firstAccountLogin') }}
+                  </el-button>
+                </div>
+              </template>
+
+              <!-- Log in with wechat -->
+              <template v-else-if="allowWechatLogin">
+                <!-- Divider -->
+                <div class="login__divider">
+                  <div class="login__divider-line" />
+                  <div class="login__divider-text">{{ $t('common.or') }}</div>
+                  <div class="login__divider-line" />
+                </div>
+                <el-button
+                  class="login-shortcut wechat"
+                  size="medium"
+                  :disabled="loginLoading"
+                  @click="weChatLogin"
+                >
+                  <div class="login-shortcut__icon">
+                    <ym-svg svg-name="wechat" />
+                  </div>
+                  {{ $t('common.loginWithWechat') }}
+                </el-button>
+              </template>
             </div>
           </div>
         </div>
@@ -117,25 +130,23 @@
       </div>
     </section>
     <!-- Slogan & Images -->
-    <section  style="display: none" class="login__slogan">
+    <section class="login__slogan">
       <div class="login__slogan-bg">
         <img
-          src="@/assets/login-bg-yidrone.jpg"
+          src="@/assets/login-bg-common.png"
           alt="Background Image"
         >
       </div>
       <div class="login__slogan-text">
         <h1 class="login__slogan-textTitle">
-          了解行业竞争格局
-          <br>
-          发现蓝海
+          让决策更智能
         </h1>
-        <!-- <p class="login__slogan-textDescr">为消费品企业提供全面、精准、实时的商业洞察和决策指导</p> -->
+        <p class="login__slogan-textDescr">为消费品企业提供全面、精准、实时的商业洞察和决策指导</p>
       </div>
     </section>
 
     <!-- Account Connection -->
-    <div class="acConnect">
+    <div style="display: none" class="acConnect">
       <div class="acConnect__imgs">
         <div class="acConnect__imgs-item">
           <ym-svg
@@ -152,7 +163,7 @@
         <div class="acConnect__imgs-item">
           <img
             width="48"
-            src="@/assets/logomark-yidrone.svg"
+            src="@/assets/logomark.svg"
             alt="Logomark"
           >
         </div>
@@ -201,8 +212,8 @@ export default {
       },
       loginLoading: false,
       currentLang: this.$i18n.locale,
-      // showShortcuts: true,
-      showShortcuts: false,
+      allowWechatLogin: true,
+      showShortcuts: true,
     };
   },
   computed: {

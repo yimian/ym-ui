@@ -1,0 +1,10 @@
+.el-button {
+  &--medium {
+    @apply px-4 leading-5;
+    padding-top: 13px;
+    padding-bottom: 13px;
+  }
+  span {
+    @apply flex items-center justify-center;
+  }
+}

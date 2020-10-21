@@ -1,12 +1,8 @@
 <template>
   <el-container>
-    <!-- <app-navbar
-      class="nav-container"
-      @toggleSidebar="toggleSidebar"
-    /> -->
+    <!-- <app-navbar @toggleSidebar="toggleSidebar" /> -->
     <app-sidebar ref="sidebar" />
-    <el-container direction="vertical">
-      <app-navbar @toggleSidebar="toggleSidebar" />
+    <el-container class="h-screen" direction="vertical">
       <app-main />
     </el-container>
   </el-container>

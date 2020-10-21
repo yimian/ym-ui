@@ -56,6 +56,10 @@ export default {
       en: 'Log in with WeChat',
       'zh-CN': '通过微信登录',
     },
+    firstAccountLogin: {
+      en: 'First-time login',
+      'zh-CN': '首次账号登录',
+    },
     logout: {
       en: 'Log Out',
       'zh-CN': '退出登录',
@@ -143,6 +147,16 @@ export default {
     copyrightMessage: {
       en: '©2014–{currentYear} Shenzhen Yimian Network Technology Co.,Ltd.',
       'zh-CN': '©2014-{currentYear} 深圳市一面网络技术有限公司 粤 ICP 备 14054704 号 - 4',
+    },
+  },
+  thirdPartyLogin: {
+    needWeChat: {
+      en: 'The current account is already bound to WeChat, please use WeChat to log in',
+      'zh-CN': '当前账号已绑定微信，请使用微信登录',
+    },
+    wechatLoginSlogan: {
+      en: 'Quick login via WeChat, safe and efficient',
+      'zh-CN': '微信快捷登录，安全高效',
     },
   },
   rules: {

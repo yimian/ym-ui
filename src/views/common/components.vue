@@ -1,12 +1,13 @@
 <template>
-  <div class="p-8 bg-white rounded-sm shadow hover:shadow-lg">
-    <el-button>按钮</el-button>
-  </div>
+  <div>
+    Components
+  </div>  
 </template>
 
 <script>
+
 export default {
-  name: '',
+  name: 'Components',
   data() {
     return {};
   },

@@ -1,19 +1,6 @@
 <template>
   <div>
-    <div style="text-align:center; margin-bottom:50px;">
-      <h2>Hello, Welcome to come here.</h2>
-      <h3>TIP: This is a beta version.</h3>
-      <h3>Start your creation as much as you can.</h3>
-      <ym-svg svg-name="svg-demo-1" />
-      <ym-svg svg-name="svg-demo-2" />
-    </div>
-    <div style="display:flex; justify-content:center;">
-      <v-chart
-        style="width:100%;"
-        :options="chartOption"
-        autoresize
-      />
-    </div>
+    Home
   </div>
 </template>
 

@@ -194,7 +194,9 @@ $--rounded: 0.25rem;
 
   &__icon {
     position: absolute;
+    top: 50%;
     left: 0;
+    transform: translateY(-50%);
     margin-left: 1rem;
 
     .wechat & {
