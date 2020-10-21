@@ -14,10 +14,14 @@
               alt="Product Logo"
             >
             <!-- Language Switcher -->
-            <base-langbar class="-m-4" placement="bottom">
-              <div class="pl-1">
-                <ym-svg svg-name="chevron-down" class="w-4 h-4" />
-              </div>
+            <base-langbar
+              className="px-1 rounded-sm hover:bg-neutral-10"
+              placement="bottom">
+              <template v-slot:arrow>
+                <div class="pl-1">
+                  <ym-svg svg-name="chevron-down" class="w-4 h-4" />
+                </div>
+              </template>
             </base-langbar>
           </header>
         </div>

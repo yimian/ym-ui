@@ -1,10 +1,9 @@
+const postcssimport = require("postcss-import")();
+const tailwindcss = require("tailwindcss")("./tailwind.config.js");
+const postcssnested = require("postcss-nested")();
+const postcsscustomproperties = require("postcss-custom-properties")();
+const autoprefixer = require("autoprefixer")();
+
 module.exports = {
-  
-  plugins: [
-    require('postcss-import'),
-    require('tailwindcss'),
-    require('postcss-nested'),
-    require('postcss-custom-properties'),
-    require('autoprefixer'),
-  ],
+  plugins: [postcssimport ,tailwindcss, postcssnested, postcsscustomproperties, autoprefixer]
 };

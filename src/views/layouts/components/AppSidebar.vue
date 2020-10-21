@@ -42,62 +42,16 @@
     </el-menu>
     <!-- Footer -->
     <footer class="flex-shrink-0 py-4">
-      <!-- Language Switcher -->
-      <!-- <el-dropdown
-        class="flex items-center w-full text-brand-200 hover:text-white hover:bg-brand-600"
-        placement="right"
-        trigger="click"
-      >
-        <div class="flex items-center w-full px-4 py-2">
-          <div class="flex items-center justify-center w-8 h-8">
-            <ym-svg svg-name="translate" class="w-5 h-5" />
+      <base-langbar
+        style="width: 100%"
+        className="w-full px-4 py-2 text-brand-200 hover:text-white hover:bg-brand-600">
+        <template v-slot:arrow>
+          <div class="ml-auto">
+            <ym-svg svg-name="chevron-down" class="w-4 h-4 transform -rotate-90" />
           </div>
-          <span class="ml-1">En</span>
-          <ym-svg svg-name="chevron-down" class="w-4 h-4 ml-auto" />
-        </div>
-        <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>En</el-dropdown-item>
-          <el-dropdown-item>中文</el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown> -->
-      <base-langbar class="w-full text-brand-200 hover:text-white hover:bg-brand-600">
-        <div class="ml-auto">
-          <ym-svg svg-name="chevron-down" class="w-4 h-4 transform -rotate-90" />
-        </div>
+        </template>
       </base-langbar>
-      <!-- User Settings -->
-      <el-dropdown
-        class="flex items-center w-full text-brand-200 hover:text-white hover:bg-brand-600"
-        placement="right"
-        trigger="click"
-      >
-        <div class="flex items-center w-full px-4 py-2">
-          <div class="flex items-center justify-center w-8 h-8">
-            <ym-svg svg-name="user-avatar" class="w-5 h-5" />
-          </div>
-          <span class="ml-1">User Name</span>
-          <ym-svg svg-name="chevron-down" class="w-4 h-4 ml-auto transform -rotate-90" />
-        </div>
-        <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item class="flex items-center">
-            <ym-svg svg-name="account" class="mr-2" />
-            账号管理
-          </el-dropdown-item>
-          <el-dropdown-item class="flex items-center">
-            <ym-svg svg-name="star" class="mr-2" />
-            收藏夹
-          </el-dropdown-item>
-          <el-dropdown-item class="flex items-center">
-            <ym-svg svg-name="user" class="mr-2" />
-            个人中心
-          </el-dropdown-item>
-          <el-dropdown-item divided></el-dropdown-item>
-          <el-dropdown-item class="flex items-center">
-            <ym-svg svg-name="logout" class="mr-2" />
-            退出登录
-          </el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
+      <user-settings />
     </footer>
   </el-aside>
 </template>
@@ -105,11 +59,13 @@
 <script>
 
 import BaseLangbar from '@/components/widgets/BaseLangbar.vue';
+import UserSettings from '@/components/widgets/UserSettings.vue';
 
 export default {
   name: 'AppSidebar',
   components: {
-    BaseLangbar
+    BaseLangbar,
+    UserSettings
   },
 
   data() {

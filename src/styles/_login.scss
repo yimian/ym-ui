@@ -48,10 +48,6 @@ $--rounded: 0.25rem;
       justify-content: space-between;
       margin-left: auto;
       margin-right: auto;
-
-      @media (min-width: $--screen-lg-min) {
-        max-width: $--maxWidth-sm;
-      }
     }
 
     // Body

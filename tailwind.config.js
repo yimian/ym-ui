@@ -6,8 +6,8 @@ module.exports = {
     standardFontWeights: true
   },
   purge: [
-    './src/**/*.vue',
-    './public/*.html',
+    // './src/**/*.vue',
+    // './public/*.html',
   ],
   important: true,
   theme: {
@@ -179,6 +179,7 @@ module.exports = {
     },
     extend: {},
   },
-  variants: {},
+  variants: {
+  },
   plugins: [],
 };
