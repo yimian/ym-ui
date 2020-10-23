@@ -10,10 +10,12 @@ import * as consts from './utils/consts';
 import './utils/compatible-ie';
 import i18n from './i18n';
 import './plugins/element';
+import './plugins/ym-components';
 import './plugins/echarts';
 import './plugins/ym-svg-sprite';
 import './styles/index.scss';
 import './styles/tailwind.css';
+
 
 Vue.router = router;
 Vue.store = store;

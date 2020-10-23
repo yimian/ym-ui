@@ -37,8 +37,19 @@ $--input-small-height: 32px;
 $--input-mini-font-size: $--fontSize-sm;
 $--input-mini-height: 24px;
 
-$--button-medium-font-size: $--fontSize-base;
+// Button
+$--button-medium-padding-vertical: 11px;
+$--button-medium-padding-horizontal: 16px;
 
+$--button-small-font-size: 14px;
+$--button-small-padding-vertical: 7px;
+$--button-small-padding-horizontal: 12px;
+
+$--button-mini-font-size: 14px;
+$--button-mini-padding-vertical: 3px;
+$--button-mini-padding-horizontal: 8px;
+
+// Dropdown
 $--dropdown-menu-box-shadow: $--shadow-lg;
 $--dropdown-menuItem-hover-fill: $--color-neutral-10;
 $--dropdown-menuItem-hover-color: $--color-neutral-700;

@@ -1,0 +1,74 @@
+// #{!important} used for override the inline styles
+
+.ym-sidebar {
+  @apply flex flex-col w-64 bg-brand-700 #{!important};
+
+  // Header
+  &__header {
+    @apply flex items-center justify-between flex-shrink-0 px-4 py-4;
+  }
+
+  // Menu
+  &__menu {
+    @apply flex-1 py-4 bg-transparent border-none;
+
+    // The padding-left of submenu
+    & > .el-submenu {
+      & > .el-menu {
+        .el-menu-item,
+        .el-menu-item-group__title {
+          padding-left: 52px !important;
+        }
+      }
+    }
+  }
+
+  // Footer
+  &__footer {
+    @apply flex-shrink-0 py-4;
+  }
+
+  .el-menu-item {
+    @apply flex items-center h-12 px-4 text-brand-200 #{!important};
+
+    &:hover {
+      @apply text-white bg-brand-600;
+    }
+
+    &:focus {
+      @apply bg-brand-600;       
+    }
+  }
+
+  // Submenu
+  .el-submenu {
+    &__title {
+      @apply flex items-center h-12 px-4 text-brand-200 #{!important};
+
+      &:hover {
+        @apply text-white bg-brand-600;
+      }
+
+      &:focus {
+        @apply bg-brand-600;       
+      }     
+    }
+
+    &__icon-arrow {
+      @apply text-sm text-brand-100;
+
+      right: 16px;
+      margin-top: -10px
+    }
+
+    .el-menu {
+      @apply bg-transparent;
+    }
+  }
+
+  .el-menu-item-group {
+    &__title {
+      @apply leading-none text-brand-400 py-2;
+    }
+  }
+}

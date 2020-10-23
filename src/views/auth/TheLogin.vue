@@ -55,24 +55,24 @@
               </el-form-item>
               <el-form-item>
                 <div class="login__main-submitBtnGroups">
-                  <el-button
+                  <ym-button
                     type="text"
-                    @click="redirectForgotPassword">
+                    @click.native="redirectForgotPassword">
                     {{ $t('common.forgetPassword') }}
-                  </el-button>
-                  <el-button
+                  </ym-button>
+                  <ym-button
                     class="login__main-submitBtn"
                     type="primary"
-                    size="medium"
+                    size="large"
                     :disabled="loginLoading"
-                    @click="login"
+                    @click.native="login"
                   >
                     {{ $t('common.login') }}
                     <i
                       v-if="loginLoading"
                       class="el-icon-loading"
                     ></i>
-                  </el-button>
+                  </ym-button>
                 </div>
               </el-form-item>
             </el-form>
@@ -82,25 +82,25 @@
               class="login__main-shortcuts"
             >
               <template v-if="showShortcuts">
-                <el-button
+                <ym-button
                   class="login-shortcut wechat"
-                  size="medium"
+                  size="large"
                   type="success"
                   :disabled="loginLoading"
-                  @click="weChatLogin"
+                  @click.native="weChatLogin"
                 >
                   <div class="login-shortcut__icon">
                     <ym-svg svg-name="wechat" />
                   </div>
                   {{ $t('common.loginWithWechat') }}
-                </el-button>
+                </ym-button>
                 <div style="text-align: right">
-                  <el-button
+                  <ym-button
                     type="text"
-                    @click="showShortcuts = false;"
+                    @click.native="showShortcuts = false;"
                   >
                     {{ $t('common.firstAccountLogin') }}
-                  </el-button>
+                  </ym-button>
                 </div>
               </template>
 

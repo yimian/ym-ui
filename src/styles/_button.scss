@@ -1,10 +1,64 @@
 .el-button {
-  &--medium {
-    @apply px-4 leading-5;
-    padding-top: 13px;
-    padding-bottom: 13px;
+  @apply outline-none;
+
+  &:focus {
+    @apply outline-none;
   }
+
+  // Span
   span {
     @apply flex items-center justify-center;
+  }
+
+  // Large Size
+  &--large {
+    @apply px-4 leading-6 text-base;
+
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+
+  // Medium/Small/Mini Size
+  &--medium,
+  &--small,
+  &--mini {
+    @apply leading-4;
+  }
+
+  // Secondary
+  &--secondary {
+    @apply text-brand-500 bg-brand-100 border-brand-100;
+
+    &.is-disabled,
+    &.is-disabled:hover,
+    &.is-disabled:focus,
+    &.is-disabled:active {
+      @apply text-brand-300 bg-brand-100 border-brand-100;
+    }
+  }
+
+  // Ghost
+  &--ghost {
+    @apply text-white bg-transparent border-white;
+
+    &:hover,
+    &:focus {
+      @apply text-white border-white;
+
+      background: rgba(white, .1);
+    }
+
+    &:active {
+      @apply border-white;
+
+      background-color: rgba(black, .08);
+    }
+
+    &.is-disabled,
+    &.is-disabled:hover,
+    &.is-disabled:focus,
+    &.is-disabled:active {
+      @apply text-neutral-400 bg-transparent border-neutral-500;
+    }
   }
 }
