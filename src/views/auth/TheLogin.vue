@@ -15,6 +15,7 @@
             >
             <!-- Language Switcher -->
             <base-langbar
+              class="-mx-1"
               className="px-1 rounded-sm hover:bg-neutral-10"
               placement="bottom">
               <template v-slot:arrow>
@@ -114,7 +115,7 @@
                 </div>
                 <el-button
                   class="login-shortcut wechat"
-                  size="medium"
+                  size="large"
                   :disabled="loginLoading"
                   @click="weChatLogin"
                 >

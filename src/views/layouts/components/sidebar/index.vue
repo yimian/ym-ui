@@ -7,16 +7,16 @@
 </template>
 
 <script>
-import SidebarHeader from './SidebarHeader.vue';
-import SidebarMenu from './SidebarMenu.vue';
-import SidebarFooter from './SidebarFooter.vue';
+import AppSidebarHeader from './SidebarHeader.vue';
+import AppSidebarMenu from './SidebarMenu.vue';
+import AppSidebarFooter from './SidebarFooter.vue';
 
 export default {
   name: 'AppSidebar',
   components: {
-    SidebarHeader,
-    SidebarMenu,
-    SidebarFooter,
+    AppSidebarHeader,
+    AppSidebarMenu,
+    AppSidebarFooter,
   },
 
   data() {

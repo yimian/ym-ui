@@ -10,7 +10,7 @@
 
 <script>
 import AppNavbar from './components/AppNavbar.vue';
-import AppSidebar from './components/AppSidebar/index.vue';
+import AppSidebar from './components/sidebar/index.vue';
 import AppMain from './components/AppMain.vue';
 
 export default {
