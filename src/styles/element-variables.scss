@@ -54,6 +54,14 @@ $--dropdown-menu-box-shadow: $--shadow-lg;
 $--dropdown-menuItem-hover-fill: $--color-neutral-10;
 $--dropdown-menuItem-hover-color: $--color-neutral-700;
 
+/* Table
+-------------------------- */
+/// color||Color|0
+$--table-border-color: $--border-color-light;
+$--table-border: 1px solid $--table-border-color;
+/// color||Color|0
+$--table-header-background-color: rgba($--color-neutral-10, .8);
+
 /* icon font path, required */
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
 

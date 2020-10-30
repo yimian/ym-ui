@@ -3,15 +3,14 @@
     class="ym-sidebar__menu"
     default-active="Homepage"
     :router="true"
-    :collapse="!drawer"
+    :collapse="collpase"
   >
-    
     <template v-for="item in menuItems">
       <el-menu-item
         v-if="!item.children"
         :key="item.index"
         :index="item.index"
-        :style="{ width: drawer ? '200px' : '64px' }"
+        :style="{ width: collapse ? '64px' : '200px' }"
         class="ym-sidebar__menu-item"
       >
         <div class="flex items-center justify-center w-8 h-8">
@@ -59,11 +58,17 @@
 </template>
 
 <script>
+
 export default {
   name: 'AppSidebarMenu',
+  props: {
+    collapse: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
-      drawer: true,
       menuItems: [
         {
           name: 'Homepage',
@@ -100,9 +105,6 @@ export default {
   watch: {
   },
   methods: {
-    toggleSidebar() {
-      this.drawer = !this.drawer;
-    },
   },
 };
 </script>

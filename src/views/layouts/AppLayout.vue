@@ -6,7 +6,7 @@
       class="h-screen"
       direction="vertical"
     >
-      <el-header class="h-auto px-6 py-4 bg-white shadow">
+      <el-header class="z-10 h-auto px-6 py-4 bg-white shadow">
         <div class="flex items-center">
           <ym-button
             class="w-8 h-8 p-0 mr-3 -ml-1"

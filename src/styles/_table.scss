@@ -1,0 +1,13 @@
+.el-table {
+
+  .cell {
+    line-height: 22px;
+  }
+
+  // Cell Horizontal Padding
+  .cell,
+  th > .cell {
+    @apply px-4;
+  }
+
+}

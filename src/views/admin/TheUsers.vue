@@ -47,18 +47,56 @@
       >
         <el-table-column
           prop="email"
-          label="Email"></el-table-column>
+          label="Email"
+          sortable
+          min-width="160"
+        />
         <el-table-column
           prop="username"
-          label="Username"></el-table-column>
+          label="Username"
+          sortable
+          min-width="130"
+        />
         <el-table-column
           prop="company"
-          label="Company"></el-table-column>
+          label="Company"
+          :filters="[
+            {
+              text: 'Louis Vuitton',
+              value: 'Louis Vuitton',
+            },
+            {
+              text: 'Ferrari',
+              value: 'Ferrari',
+            },
+            {
+              text: 'Gillette',
+              value: 'Gillette',
+            },
+          ]"
+          :filter-method="filterHandler"
+          min-width="130"
+        />
         <el-table-column
           prop="role"
-          label="Role"></el-table-column>
+          label="Role"
+          :filters="[
+            {
+              text: 'Root',
+              value: 'Root',
+            },
+            {
+              text: 'Admin',
+              value: 'Admin',
+            },
+          ]"
+          :filter-method="filterHandler"
+          width="128"
+        />
         <el-table-column
-          label="Status">
+          label="Status"
+          width="128"
+        >
           <template slot-scope="scope">
             <ym-status
               :status="scope.row.status.status"
@@ -68,10 +106,15 @@
         </el-table-column>
         <el-table-column
           prop="updateTime"
-          label="Update Time"></el-table-column>
+          label="Update Time"
+          sortable
+          width="192"
+        />
         <el-table-column
           label="Action"
           align="center"
+          fixed="right"
+          width="96"
         >
           <template slot-scope="scope">
             <div class="space-x-4">
@@ -90,16 +133,25 @@
                 />
                 <el-dropdown-menu slot="dropdown">
                   <el-dropdown-item class="flex items-center">
-                    <ym-svg svg-name="password" class="mr-2" />
+                    <ym-svg
+                      svg-name="password"
+                      class="mr-2"
+                    />
                     {{ $t('common.account') }}
                   </el-dropdown-item>
                   <el-dropdown-item class="flex items-center">
-                    <ym-svg svg-name="error" class="mr-2" />
+                    <ym-svg
+                      svg-name="error"
+                      class="mr-2"
+                    />
                     {{ $t('common.disable') }}
                   </el-dropdown-item>
                   <el-dropdown-item divided />
                   <el-dropdown-item class="flex items-center">
-                    <ym-svg svg-name="trash-can" class="mr-2" />
+                    <ym-svg
+                      svg-name="trash-can"
+                      class="mr-2"
+                    />
                     {{ $t('common.delete') }}
                   </el-dropdown-item>
                 </el-dropdown-menu>
@@ -108,6 +160,11 @@
           </template>
         </el-table-column>
       </el-table>
+      <el-pagination
+        class="p-4 text-right"
+        layout="prev, pager, next"
+        :total="50">
+      </el-pagination>
     </div>
   </div>
 </template>
@@ -119,8 +176,12 @@ export default {
   name: 'TheUsers',
   data() {
     return {
-      defaultSelectedRole: 'admin',
+      defaultSelectedRole: 'all',
       roles: [
+        {
+          value: 'all',
+          label: 'All',
+        },
         {
           value: 'admin',
           label: 'Admin',
@@ -139,6 +200,10 @@ export default {
   watch: {
   },
   methods: {
+    filterHandler(value, row, column) {
+      const property = column['property'];
+      return row[property] === value;
+    },
   },
 };
 </script>
