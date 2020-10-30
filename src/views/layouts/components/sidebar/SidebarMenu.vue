@@ -5,30 +5,50 @@
     :router="true"
     :collapse="!drawer"
   >
-    <!-- :style="{ width: drawer ? '199px' : '60px' }" -->
+    
     <template v-for="item in menuItems">
       <el-menu-item
         v-if="!item.children"
         :key="item.index"
         :index="item.index"
+        :style="{ width: drawer ? '200px' : '64px' }"
         class="ym-sidebar__menu-item"
       >
         <div class="flex items-center justify-center w-8 h-8">
-          <ym-svg :svg-name="item.icon" class="w-5 h-5" />
+          <ym-svg
+            :svg-name="item.icon"
+            class="w-5 h-5"
+          />
         </div>
         <span class="ml-1">{{ item.name }}</span>
       </el-menu-item>
 
       <template v-else>
-        <el-submenu :index="item.index" :key="item.index">
-          <div class="flex items-center" slot="title">
+        <el-submenu
+          :index="item.index"
+          :key="item.index"
+        >
+          <div
+            class="flex items-center"
+            slot="title"
+          >
             <div class="flex items-center justify-center w-8 h-8">
-              <ym-svg svg-name="wikis" class="w-5 h-5" />
+              <ym-svg
+                svg-name="wikis"
+                class="w-5 h-5"
+              />
             </div>
             <span class="ml-1">{{ item.name }}</span>
           </div>
-          <el-menu-item v-for="subItem in item.children" :key="subItem.index">
-            <div class="flex items-center" slot="title">
+          <el-menu-item
+            v-for="subItem in item.children"
+            :key="subItem.index"
+            :index="subItem.index"
+          >
+            <div
+              class="flex items-center"
+              slot="title"
+            >
               <span>{{ subItem.name }}</span>
             </div>
           </el-menu-item>
@@ -51,7 +71,7 @@ export default {
           icon: 'home',
         },
         {
-          name: 'User Management',
+          name: 'Users',
           index: 'Users',
           icon: 'user-group2',
         },

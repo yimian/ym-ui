@@ -1,4 +1,5 @@
 import BaseButton from './BaseButton.vue';
+import Status from './Status.vue';
 
 const YmButton = {
   install(Vue) {
@@ -6,6 +7,13 @@ const YmButton = {
   }
 }
 
+const YmStatus = {
+  install(Vue) {
+    Vue.component('YmStatus', Status);
+  }
+}
+
 export {
   YmButton,
+  YmStatus,
 };

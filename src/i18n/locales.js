@@ -68,6 +68,10 @@ export default {
       en: 'Account',
       'zh-CN': '修改密码',
     },
+    disable: {
+      en: 'Disable',
+      'zh-CN': '禁用',
+    },
     forgetPassword: {
       en: 'Forget Password?',
       'zh-CN': '忘记密码?',

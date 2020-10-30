@@ -12,10 +12,10 @@
 
   // Large Size
   &--large {
-    @apply px-4 leading-6 text-base;
+    @apply px-4 text-base leading-5;
 
-    padding-top: 11px;
-    padding-bottom: 11px;
+    padding-top: 13px;
+    padding-bottom: 13px
   }
 
   // Medium/Small/Mini Size
@@ -59,6 +59,48 @@
     &.is-disabled:focus,
     &.is-disabled:active {
       @apply text-neutral-400 bg-transparent border-neutral-500;
+    }
+  }
+
+  // Text Button
+  &--text {
+    &.el-button--large {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  // Icon Only
+  &--icon-only {
+    padding-left: 11px;
+    padding-right: 11px;
+
+    &.el-button--large {
+      padding-left: 13px;
+      padding-right: 13px;
+    }
+
+    &.el-button--small {
+      padding-left: 7px;
+      padding-right: 7px;
+    }
+
+    &.el-button--mini {
+      padding-left: 3px;
+      padding-right: 3px;
+    }
+
+    &.el-button--text {
+      @apply text-neutral-600;
+
+      &:hover,
+      &:focus {
+        @apply bg-neutral-20;
+      }
+
+      &:active {
+        @apply bg-neutral-30;
+      }
     }
   }
 }

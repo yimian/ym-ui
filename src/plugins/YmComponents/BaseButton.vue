@@ -1,20 +1,22 @@
 <template>
-  <!-- 
-    type options: primary, secondary, default, text, ghost
-    size options: large, medium, small, mini
-   -->
   <el-button
     :type="type"
     :size="size"
-    :iconLeft="iconLeft"
+    :icon="icon"
     :iconRight="iconRight"
     :disabled="disabled"
+    :iconOnly="iconOnly"
+    :class="iconOnly ? 'el-button--icon-only' : ''"
+    @click="handleClick"
   >
     <!-- Left Icon -->
     <ym-svg
-      v-if="iconLeft"
-      :class="['mr-2', size === 'large' ? 'w-5 h-5' : '']"
-      :svg-name="iconLeft"
+      v-if="icon"
+      :class="[
+        iconOnly ? '' : 'mr-2',
+        size === 'large' ? 'w-5 h-5' : ''
+      ]"
+      :svg-name="icon"
     />
 
     <!-- Label -->
@@ -23,7 +25,10 @@
     <!-- Right Icon -->
     <ym-svg
       v-if="iconRight"
-      :class="['ml-2', size === 'large' ? 'w-5 h-5' : '']"
+      :class="[
+        'ml-2',
+        size === 'large' ? 'w-5 h-5' : ''
+      ]"
       :svg-name="iconRight"
     />
   </el-button>
@@ -32,36 +37,39 @@
 <script>
 export default {
   name: 'BaseButton',
-
   props: {
     label: {
       type: String,
-      default: 'Button',
+      default: '',
     },
-
     type: {
       type: String,
       default: '',
     },
-
     size: {
       type: String,
       default: 'medium',
     },
-
-    iconLeft: {
+    icon: {
       type: String,
       default: '',
     },
-
     iconRight: {
       type: String,
       default: '',
     },
-
     disabled: {
       type: Boolean,
       default: false,
+    },
+    iconOnly: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  methods: {
+    handleClick(evt) {
+      this.$emit('click', evt);
     },
   },
 }

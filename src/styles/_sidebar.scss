@@ -1,7 +1,7 @@
 // #{!important} used for override the inline styles
 
 .ym-sidebar {
-  @apply flex flex-col w-64 bg-brand-700 #{!important};
+  @apply flex flex-col bg-brand-700 w-auto #{!important};
 
   // Header
   &__header {

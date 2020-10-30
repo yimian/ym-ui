@@ -58,10 +58,11 @@ export default new Router({
           path: '/index',
           name: 'Index',
           component: () => import('@/views/common/VHomepage.vue'),
-          meta: {
-            icon: 'home',
-            auth: [],
-          },
+        },
+        {
+          path: '/buttons',
+          name: 'Buttons',
+          component: () => import('@/views/common/Buttons.vue'),
         },
       ],
     },
@@ -74,10 +75,6 @@ export default new Router({
           path: 'index',
           name: 'Users',
           component: () => import('@/views/admin/TheUsers.vue'),
-          meta: {
-            icon: 'people_outline',
-            auth: [],
-          },
         },
       ],
     },
