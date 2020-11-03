@@ -2,11 +2,13 @@
   <header class="ym-sidebar__header">
     <router-link
       :to="{ path: '/' }"
-      aria-label="Home">
+      aria-label="Home"
+    >
       <img
         class="h-8"
         src="@/assets/logo-white.svg"
-        alt="Product Logo">
+        alt="Product Logo"
+      >
     </router-link>
     <!-- <el-button
       class="p-1 text-white border-none outline-none hover:bg-brand-600 focus:bg-brand-800"

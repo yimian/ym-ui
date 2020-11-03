@@ -6,21 +6,34 @@
   >
     <div class="flex items-center w-full px-4 py-2">
       <div class="flex items-center justify-center w-8 h-8">
-        <ym-svg svg-name="user-avatar" class="w-5 h-5" />
+        <ym-svg
+          svg-name="user-avatar"
+          class="w-5 h-5"
+        />
       </div>
       <span class="ml-1">{{ user && user.username }}</span>
-      <ym-svg svg-name="chevron-down" class="w-4 h-4 ml-auto transform -rotate-90" />
+      <ym-svg
+        svg-name="chevron-down"
+        class="w-4 h-4 ml-auto transform -rotate-90"
+      />
     </div>
     <el-dropdown-menu slot="dropdown">
       <el-dropdown-item class="flex items-center">
-        <ym-svg svg-name="password" class="mr-2" />
+        <ym-svg
+          svg-name="password"
+          class="mr-2"
+        />
         {{ $t('common.account') }}
       </el-dropdown-item>
       <el-dropdown-item divided></el-dropdown-item>
       <el-dropdown-item
         class="flex items-center"
-        @click.native="logout">
-        <ym-svg svg-name="logout" class="mr-2" />
+        @click.native="logout"
+      >
+        <ym-svg
+          svg-name="logout"
+          class="mr-2"
+        />
         {{ $t('common.logout') }}
       </el-dropdown-item>
     </el-dropdown-menu>

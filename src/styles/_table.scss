@@ -10,4 +10,8 @@
     @apply px-4;
   }
 
+  &__fixed::before,
+  &__fixed-right::before {
+    @apply bg-neutral-20;
+  }
 }

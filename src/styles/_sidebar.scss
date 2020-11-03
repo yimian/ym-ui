@@ -12,6 +12,11 @@
   &__menu {
     @apply flex-1 py-4 bg-transparent border-none;
 
+    // Default Width
+    &:not(.el-menu--collapse) {
+      width: 200px;
+    }
+
     // The padding-left of submenu
     & > .el-submenu {
       & > .el-menu {
@@ -28,8 +33,9 @@
     @apply flex-shrink-0 py-4;
   }
 
+  // Menu Item
   .el-menu-item {
-    @apply flex items-center h-12 px-4 text-brand-200 #{!important};
+    @apply flex items-center h-12 pl-4 pr-3 text-brand-200 #{!important};
 
     &:hover {
       @apply text-white bg-brand-600;
@@ -38,12 +44,16 @@
     &:focus {
       @apply bg-brand-600;       
     }
+
+    &.is-active {
+      @apply text-white bg-brand-600 #{!important};
+    }
   }
 
   // Submenu
   .el-submenu {
     &__title {
-      @apply flex items-center h-12 px-4 text-brand-200 #{!important};
+      @apply flex items-center h-12 pl-4 pr-3 text-brand-200 #{!important};
 
       &:hover {
         @apply text-white bg-brand-600;

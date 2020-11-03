@@ -4,26 +4,12 @@
     <div class="flex justify-between">
       <!-- Left – Filter and search -->
       <div class="flex mb-6 space-x-2">
-        <!-- Filter – Select the role type of users -->
-        <el-select
-          class="w-40"
-          v-model="defaultSelectedRole"
-          size="small"
-          placeholder="Please..."
-        >
-          <el-option
-            v-for="role in roles"
-            :key="role.value"
-            :label="role.label"
-            :value='role.value'
-          />
-        </el-select>
         <!-- Search -->
         <el-input
           class="w-64"
           v-model="searchInput"
           size="small"
-          placeholder="Please..."
+          :placeholder="$t('common.email') + '/' + $t('common.username')"
           prefix-icon="el-icon-search"
           clearable
         />
@@ -35,7 +21,7 @@
           size="small"
           icon="user-follow"
         >
-          New User
+          {{ $t('common.addUser') }}
         </ym-button>
       </div>
     </div>
@@ -47,19 +33,19 @@
       >
         <el-table-column
           prop="email"
-          label="Email"
+          :label="$t('common.email')"
           sortable
           min-width="160"
         />
         <el-table-column
           prop="username"
-          label="Username"
+          :label="$t('common.username')"
           sortable
           min-width="130"
         />
         <el-table-column
           prop="company"
-          label="Company"
+          :label="$t('common.enterprise')"
           :filters="[
             {
               text: 'Louis Vuitton',
@@ -79,7 +65,7 @@
         />
         <el-table-column
           prop="role"
-          label="Role"
+          :label="$t('common.role')"
           :filters="[
             {
               text: 'Root',
@@ -94,7 +80,7 @@
           width="128"
         />
         <el-table-column
-          label="Status"
+          :label="$t('common.status')"
           width="128"
         >
           <template slot-scope="scope">
@@ -106,12 +92,12 @@
         </el-table-column>
         <el-table-column
           prop="updateTime"
-          label="Update Time"
+          :label="$t('common.updateTime')"
           sortable
           width="192"
         />
         <el-table-column
-          label="Action"
+          :label="$t('route.actions')"
           align="center"
           fixed="right"
           width="96"
@@ -123,6 +109,7 @@
                 size="mini"
                 icon="edit"
                 icon-only
+                @click="handleEdit(scope.$index, scope.row)"
               />
               <el-dropdown trigger="click">
                 <ym-button
@@ -177,20 +164,6 @@ export default {
   data() {
     return {
       defaultSelectedRole: 'all',
-      roles: [
-        {
-          value: 'all',
-          label: 'All',
-        },
-        {
-          value: 'admin',
-          label: 'Admin',
-        },
-        {
-          value: 'root',
-          label: 'Root',
-        },
-      ],
       searchInput: '',
       userTableData: USERS,
     };
@@ -201,8 +174,11 @@ export default {
   },
   methods: {
     filterHandler(value, row, column) {
-      const property = column['property'];
+      const property = column.property;
       return row[property] === value;
+    },
+    handleEdit(index, row) {
+      console.log(index, row);
     },
   },
 };

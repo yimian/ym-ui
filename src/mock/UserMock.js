@@ -6,7 +6,7 @@ export const USERS = [
     role: 'Root',
     status: {
       status: 'success',
-      label: 'Normal'
+      label: 'Normal',
     },
     updateTime: '2019-06-30  16:07:30',
   },
@@ -17,7 +17,7 @@ export const USERS = [
     role: 'Admin',
     status: {
       status: 'offline',
-      label: 'Inactive'
+      label: 'Inactive',
     },
     updateTime: '2019-06-30  16:07:30',
   },
@@ -39,7 +39,7 @@ export const USERS = [
     role: 'Admin',
     status: {
       status: 'offline',
-      label: 'Inactive'
+      label: 'Inactive',
     },
     updateTime: '2019-06-30  16:07:30',
   },
@@ -50,7 +50,7 @@ export const USERS = [
     role: 'Admin',
     status: {
       status: 'danger',
-      label: 'Disable'
+      label: 'Disable',
     },
     updateTime: '2019-06-30  16:07:30',
   },
@@ -61,7 +61,7 @@ export const USERS = [
     role: 'Admin',
     status: {
       status: 'offline',
-      label: 'Inactive'
+      label: 'Inactive',
     },
     updateTime: '2019-06-30  16:07:30',
   },
@@ -72,7 +72,7 @@ export const USERS = [
     role: 'Admin',
     status: {
       status: 'success',
-      label: 'Normal'
+      label: 'Normal',
     },
     updateTime: '2019-06-30  16:07:30',
   },
@@ -83,7 +83,7 @@ export const USERS = [
     role: 'Admin',
     status: {
       status: 'success',
-      label: 'Normal'
+      label: 'Normal',
     },
     updateTime: '2019-06-30  16:07:30',
   },
@@ -94,7 +94,7 @@ export const USERS = [
     role: 'Admin',
     status: {
       status: 'offline',
-      label: 'Inactive'
+      label: 'Inactive',
     },
     updateTime: '2019-06-30  16:07:30',
   },
@@ -105,9 +105,8 @@ export const USERS = [
     role: 'Admin',
     status: {
       status: 'success',
-      label: 'Normal'
+      label: 'Normal',
     },
     updateTime: '2019-06-30  16:07:30',
   },
 ];
-

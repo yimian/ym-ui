@@ -152,6 +152,22 @@ export default {
       en: '©2014–{currentYear} Shenzhen Yimian Network Technology Co.,Ltd.',
       'zh-CN': '©2014-{currentYear} 深圳市一面网络技术有限公司 粤 ICP 备 14054704 号 - 4',
     },
+    addUser: {
+      en: 'Add User',
+      'zh-CN': '添加用户',
+    },
+    enterprise: {
+      en: 'Enterprise',
+      'zh-CN': '企业',
+    },
+    status: {
+      en: 'Status',
+      'zh-CN': '状态',
+    },
+    updateTime: {
+      en: 'Update Time',
+      'zh-CN': '更新时间',
+    },
   },
   thirdPartyLogin: {
     needWeChat: {
