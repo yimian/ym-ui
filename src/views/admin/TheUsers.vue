@@ -168,13 +168,11 @@ export default {
       userTableData: USERS,
     };
   },
-  computed: {
-  },
-  watch: {
-  },
+  computed: {},
+  watch: {},
   methods: {
     filterHandler(value, row, column) {
-      const property = column.property;
+      const { property } = column;
       return row[property] === value;
     },
     handleEdit(index, row) {

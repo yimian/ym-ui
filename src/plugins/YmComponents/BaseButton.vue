@@ -72,5 +72,5 @@ export default {
       this.$emit('click', evt);
     },
   },
-}
+};
 </script>
