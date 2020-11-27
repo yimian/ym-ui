@@ -1,14 +1,11 @@
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-    defaultLineHeights: true,
-    standardFontWeights: true
+  purge: {
+    enable: process.env.NODE_ENV === 'production',
+    content: [
+      './src/**/*.html',
+      './src/**/*.vue',
+    ],
   },
-  purge: [
-    // './src/**/*.vue',
-    // './public/*.html',
-  ],
   important: true,
   theme: {
     colors: {
@@ -135,7 +132,7 @@ module.exports = {
     boxShadow: {
       xs: "var(--shadow-xs)",
       sm: "var(--shadow-sm)",
-      default: "var(--shadow-default)",
+      DEFAULT: "var(--shadow-default)",
       md: "var(--shadow-md)",
       lg: "var(--shadow-lg)",
       xl: "var(--shadow-xl)",
@@ -169,7 +166,7 @@ module.exports = {
     borderRadius: {
       none: "var(--borderRadius-none)",
       sm: "var(--borderRadius-sm)",
-      default: "var(--borderRadius-default)",
+      DEFAULT: "var(--borderRadius-default)",
       md: "var(--borderRadius-md)",
       lg: "var(--borderRadius-lg)",
       xl: "var(--borderRadius-xl)",

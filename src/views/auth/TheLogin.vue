@@ -1,139 +1,33 @@
 <template>
   <!-- Login -->
   <div class="login">
-    <!-- Main Section -->
-    <section class="login__main">
-      <div class="login__main-form">
-        <div style="width: 100%">
-          <!-- Header -->
-          <header class="login__main-formHeader">
-            <!-- Logo -->
-            <img
-              style="height: 32px"
-              src="@/assets/logo.svg"
-              alt="Product Logo"
-            >
-            <!-- Language Switcher -->
-            <base-langbar
-              class="-mx-1"
-              className="px-1 rounded-sm hover:bg-neutral-10"
-              placement="bottom">
-              <template v-slot:arrow>
-                <div class="pl-1">
-                  <ym-svg svg-name="chevron-down" class="w-4 h-4" />
-                </div>
-              </template>
-            </base-langbar>
-          </header>
-        </div>
-        <!-- Body -->
-        <div style="width: 100%">
-          <div class="login__main-formBody">
-            <h1 class="login__main-formBodyTitle">
-              {{ $t('common.loginN') }}
-              <span v-if="showShortcuts">{{ $t('thirdPartyLogin.wechatLoginSlogan') }}</span>
-            </h1>
-            <!-- Log in with account and password -->
-            <el-form v-if="!showShortcuts">
-              <el-form-item>
-                <el-input
-                  v-model="form.username"
-                  size="medium"
-                  clearable
-                  :placeholder="$t('common.username')"
-                  @keyup.enter.native="login"
-                />
-              </el-form-item>
-              <el-form-item>
-                <el-input
-                  v-model="form.password"
-                  size="medium"
-                  show-password
-                  :placeholder="$t('common.password')"
-                  type="password"
-                  @keyup.enter.native="login"
-                />
-              </el-form-item>
-              <el-form-item>
-                <div class="login__main-submitBtnGroups">
-                  <ym-button
-                    type="text"
-                    @click.native="redirectForgotPassword">
-                    {{ $t('common.forgetPassword') }}
-                  </ym-button>
-                  <ym-button
-                    class="login__main-submitBtn"
-                    type="primary"
-                    size="large"
-                    :disabled="loginLoading"
-                    @click.native="login"
-                  >
-                    {{ $t('common.login') }}
-                    <i
-                      v-if="loginLoading"
-                      class="el-icon-loading"
-                    ></i>
-                  </ym-button>
-                </div>
-              </el-form-item>
-            </el-form>
-            <!-- Log in with another ways -->
-            <div
-              v-if="allowWechatLogin || showShortcuts"
-              class="login__main-shortcuts"
-            >
-              <template v-if="showShortcuts">
-                <ym-button
-                  class="login-shortcut wechat"
-                  size="large"
-                  type="success"
-                  :disabled="loginLoading"
-                  @click.native="weChatLogin"
-                >
-                  <div class="login-shortcut__icon">
-                    <ym-svg svg-name="wechat" />
-                  </div>
-                  {{ $t('common.loginWithWechat') }}
-                </ym-button>
-                <div style="text-align: right">
-                  <ym-button
-                    type="text"
-                    @click.native="showShortcuts = false;"
-                  >
-                    {{ $t('common.firstAccountLogin') }}
-                  </ym-button>
-                </div>
-              </template>
-
-              <!-- Log in with wechat -->
-              <template v-else-if="allowWechatLogin">
-                <!-- Divider -->
-                <div class="login__divider">
-                  <div class="login__divider-line" />
-                  <div class="login__divider-text">{{ $t('common.or') }}</div>
-                  <div class="login__divider-line" />
-                </div>
-                <el-button
-                  class="login-shortcut wechat"
-                  size="large"
-                  :disabled="loginLoading"
-                  @click="weChatLogin"
-                >
-                  <div class="login-shortcut__icon">
-                    <ym-svg svg-name="wechat" />
-                  </div>
-                  {{ $t('common.loginWithWechat') }}
-                </el-button>
-              </template>
-            </div>
+    <!-- Header -->
+    <header class="login__header">
+      <!-- Logo -->
+      <img
+        class="login__header-logo lg:hidden"
+        src="@/assets/logo.svg"
+        alt="Product Logo"
+      >
+      <!-- Logo -->
+      <img
+        class="hidden login__header-logo lg:block"
+        src="@/assets/logo-white.svg"
+        alt="Product Logo"
+      >
+      <!-- Language Switcher -->
+      <base-langbar
+        class="-mx-1"
+        className="px-1 rounded-sm hover:bg-neutral-10"
+        placement="bottom"
+      >
+        <template v-slot:arrow>
+          <div class="pl-1">
+            <ym-svg svg-name="chevron-down" class="w-4 h-4" />
           </div>
-        </div>
-        <!-- Footer -->
-        <footer class="login__main-footer">
-          {{ $t('common.copyrightMessage', { currentYear }) }}
-        </footer>
-      </div>
-    </section>
+        </template>
+      </base-langbar>
+    </header>
     <!-- Slogan & Images -->
     <section class="login__slogan">
       <div class="login__slogan-bg">
@@ -148,6 +42,113 @@
         </h1>
         <p class="login__slogan-textDescr">为消费品企业提供全面、精准、实时的商业洞察和决策指导</p>
       </div>
+    </section>
+
+    <!-- Main Section -->
+    <section class="login__main">
+      <div class="login__main-formBody">
+        <h1 class="login__main-formBodyTitle">
+          {{ $t('common.loginN') }}
+          <span v-if="showShortcuts">{{ $t('thirdPartyLogin.wechatLoginSlogan') }}</span>
+        </h1>
+        <!-- Log in with account and password -->
+        <el-form v-if="!showShortcuts">
+          <el-form-item>
+            <el-input
+              v-model="form.username"
+              size="medium"
+              clearable
+              :placeholder="$t('common.username')"
+              @keyup.enter.native="login"
+            />
+          </el-form-item>
+          <el-form-item>
+            <el-input
+              v-model="form.password"
+              size="medium"
+              show-password
+              :placeholder="$t('common.password')"
+              type="password"
+              @keyup.enter.native="login"
+            />
+          </el-form-item>
+          <el-form-item>
+            <div class="login__main-submitBtnGroups">
+              <ym-button
+                type="text"
+                @click.native="redirectForgotPassword">
+                {{ $t('common.forgetPassword') }}
+              </ym-button>
+              <ym-button
+                class="login__main-submitBtn"
+                type="primary"
+                size="large"
+                :disabled="loginLoading"
+                @click.native="login"
+              >
+                {{ $t('common.login') }}
+                <i
+                  v-if="loginLoading"
+                  class="el-icon-loading"
+                ></i>
+              </ym-button>
+            </div>
+          </el-form-item>
+        </el-form>
+        <!-- Log in with another ways -->
+        <div
+          v-if="allowWechatLogin || showShortcuts"
+          class="login__main-shortcuts"
+        >
+          <template v-if="showShortcuts">
+            <ym-button
+              class="login-shortcut wechat"
+              size="large"
+              type="success"
+              :disabled="loginLoading"
+              @click.native="weChatLogin"
+            >
+              <div class="login-shortcut__icon">
+                <ym-svg svg-name="wechat" />
+              </div>
+              {{ $t('common.loginWithWechat') }}
+            </ym-button>
+            <div style="text-align: right">
+              <ym-button
+                type="text"
+                @click.native="showShortcuts = false;"
+              >
+                {{ $t('common.firstAccountLogin') }}
+              </ym-button>
+            </div>
+          </template>
+
+          <!-- Log in with wechat -->
+          <template v-else-if="allowWechatLogin">
+            <!-- Divider -->
+            <div class="login__divider">
+              <div class="login__divider-line" />
+              <div class="login__divider-text">{{ $t('common.or') }}</div>
+              <div class="login__divider-line" />
+            </div>
+            <el-button
+              class="login-shortcut wechat"
+              size="large"
+              :disabled="loginLoading"
+              @click="weChatLogin"
+            >
+              <div class="login-shortcut__icon">
+                <ym-svg svg-name="wechat" />
+              </div>
+              {{ $t('common.loginWithWechat') }}
+            </el-button>
+          </template>
+        </div>
+      </div>
+      <!-- Footer -->
+      <footer class="login__main-footer">
+        {{ $t('common.copyrightMessage', { currentYear }) }}
+      </footer>
     </section>
 
     <!-- Account Connection -->
