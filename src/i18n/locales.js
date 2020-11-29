@@ -210,25 +210,13 @@ export default {
       en: 'Users',
       'zh-CN': '用户',
     },
-    actions: {
-      en: 'Actions',
-      'zh-CN': '操作',
+    components: {
+      en: 'Components',
+      'zh-CN': '组件',
     },
-    create: {
-      en: 'Create',
-      'zh-CN': '新增',
-    },
-    delete: {
-      en: 'Delete',
-      'zh-CN': '删除',
-    },
-    update: {
-      en: 'Update',
-      'zh-CN': '修改',
-    },
-    read: {
-      en: 'Read',
-      'zh-CN': '查询',
+    buttons: {
+      en: 'Buttons',
+      'zh-CN': '按钮',
     },
   },
 };

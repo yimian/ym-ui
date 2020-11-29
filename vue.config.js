@@ -34,6 +34,9 @@ module.exports = {
     'resize-detector',
   ],
   chainWebpack: (config) => {
+    config.resolve
+      .symlinks(true);
+
     config
       .plugin('ignorePlugin')
       .use(ignorePlugin, [{
