@@ -10,6 +10,7 @@
         </div>
       </template>
     </base-langbar>
+
     <!-- User Settings -->
     <user-settings />
   </footer>
@@ -36,6 +37,3 @@ export default {
   },
 };
 </script>
-
-<style>
-</style>

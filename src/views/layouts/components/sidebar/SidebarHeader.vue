@@ -1,6 +1,7 @@
 <template>
   <header class="ym-sidebar__header">
     <router-link
+      v-if="!isCollapse"
       :to="{ path: '/' }"
       aria-label="Home"
     >
@@ -25,17 +26,14 @@
 <script>
 export default {
   name: 'AppSidebarHeader',
+  props: {
+    isCollapse: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {};
   },
-  computed: {
-  },
-  watch: {
-  },
-  methods: {
-  },
 };
 </script>
-
-<style>
-</style>
