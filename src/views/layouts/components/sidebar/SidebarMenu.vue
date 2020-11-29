@@ -3,7 +3,7 @@
     class="ym-sidebar__menu"
     router
     :default-active="activeMenu"
-    :collapse="collapse"
+    :collapse="isCollapse"
   >
     <template v-for="(route, index) in routes">
       <template v-if="!route.children">
@@ -85,7 +85,7 @@
 export default {
   name: 'SidebarMenu',
   props: {
-    collapse: {
+    isCollapse: {
       type: Boolean,
       default: false,
     },

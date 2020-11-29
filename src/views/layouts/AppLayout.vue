@@ -2,7 +2,7 @@
   <el-container>
     <app-sidebar
       ref="sidebar"
-      :collapse="collapse"
+      :is-collapse="isCollapse"
     />
     <el-container
       class="h-screen"
@@ -14,7 +14,7 @@
             class="w-8 h-8 p-0 mr-3 -ml-1"
             type="text"
             icon-only
-            @click="collapse = !collapse"
+            @click="isCollapse = !isCollapse"
           >
             <ym-svg
               svgName="menu"
@@ -41,7 +41,7 @@ export default {
   },
   data() {
     return {
-      collapse: false,
+      isCollapse: false,
     };
   },
   methods: {

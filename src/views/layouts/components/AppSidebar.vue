@@ -1,15 +1,17 @@
 <template>
   <el-aside class="ym-sidebar">
-    <app-sidebar-header />
-    <app-sidebar-menu :collapse="collapse" />
-    <app-sidebar-footer />
+    <app-sidebar-header :is-collapse="isCollapse" />
+    <app-sidebar-menu :is-collapse="isCollapse" />
+    <app-sidebar-footer v-if="!isCollapse" />
   </el-aside>
 </template>
 
 <script>
-import AppSidebarHeader from './sidebar/SidebarHeader.vue';
-import AppSidebarMenu from './sidebar/SidebarMenu.vue';
-import AppSidebarFooter from './sidebar/SidebarFooter.vue';
+import {
+  AppSidebarHeader,
+  AppSidebarMenu,
+  AppSidebarFooter,
+} from './sidebar';
 
 export default {
   name: 'AppSidebar',
@@ -19,23 +21,10 @@ export default {
     AppSidebarFooter,
   },
   props: {
-    collapse: {
+    isCollapse: {
       type: Boolean,
       default: false,
     },
   },
-  data() {
-    return {
-    };
-  },
-  computed: {
-  },
-  mounted() {
-  },
-  methods: {
-  },
 };
 </script>
-
-<style lang="scss" scoped>
-</style>
