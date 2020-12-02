@@ -1,25 +1,16 @@
 <template>
-  <header class="ym-sidebar__header">
+  <header class="flex items-center justify-between flex-shrink-0 px-4 py-4">
     <router-link
-      v-if="!isCollapse"
+      class="relative w-full h-8 overflow-hidden"
       :to="{ path: '/' }"
       aria-label="Home"
     >
       <img
-        class="h-8"
+        class="absolute h-8 max-w-none"
         src="@/assets/logo-white.svg"
         alt="Product Logo"
       >
     </router-link>
-    <!-- <el-button
-      class="p-1 text-white border-none outline-none hover:bg-brand-600 focus:bg-brand-800"
-      type="text"
-      @click.stop="$emit('toggleSidebar')"
-      aria-label="Menu"
-      aria-haspopup="true"
-    >
-      <ym-svg class="w-6 h-6" svgName="menu" />
-    </el-button> -->
   </header>
 </template>
 

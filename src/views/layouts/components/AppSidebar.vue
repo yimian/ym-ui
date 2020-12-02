@@ -1,8 +1,8 @@
 <template>
-  <el-aside class="ym-sidebar">
+  <el-aside :class="['ym-sidebar flex flex-col w-auto bg-brand-700', { 'ym-sidebar--collapse' : isCollapse }]">
     <app-sidebar-header :is-collapse="isCollapse" />
     <app-sidebar-menu :is-collapse="isCollapse" />
-    <app-sidebar-footer v-if="!isCollapse" />
+    <app-sidebar-footer :is-collapse="isCollapse" />
   </el-aside>
 </template>
 
