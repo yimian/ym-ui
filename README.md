@@ -26,5 +26,7 @@ npm run lint
 yarn export-tailwind-config
 ```
 
+To know more informations, go to [tailwindcss-export-config](https://github.com/dobromir-hristov/tailwindcss-export-config).
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
