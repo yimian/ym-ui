@@ -20,5 +20,11 @@ npm run build
 npm run lint
 ```
 
+### Export Tailwind config options to SCSS
+
+```
+yarn export-tailwind-config
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
