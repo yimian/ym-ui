@@ -1,7 +1,8 @@
 .DS_Store
 node_modules
 /dist
-
+/__pycache__
+dump.rdb
 
 # local env files
 .env.local
