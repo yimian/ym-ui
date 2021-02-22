@@ -5,22 +5,6 @@ import AppLayout from '@/views/layouts/AppLayout.vue';
 
 Vue.use(Router);
 
-const Create = {
-  template: '<div class="title">Create</div>',
-};
-
-const Read = {
-  template: '<div class="title">Read</div>',
-};
-
-const Update = {
-  template: '<div class="title">Update</div>',
-};
-
-const Delete = {
-  template: '<div class="title">Delete</div>',
-};
-
 /**
 * TIPS:
 * meta: {
@@ -59,11 +43,6 @@ export default new Router({
           name: 'Index',
           component: () => import('@/views/common/VHomepage.vue'),
         },
-        {
-          path: '/buttons',
-          name: 'Buttons',
-          component: () => import('@/views/common/Buttons.vue'),
-        },
       ],
     },
     {
@@ -79,48 +58,20 @@ export default new Router({
       ],
     },
     {
-      path: '/actions',
-      name: 'Actions',
+      path: '/components',
+      name: 'Components',
       component: AppLayout,
-      redirect: { name: 'Create' },
+      redirect: { name: 'Buttons' },
       meta: {
         hasMulSub: true,
       },
       children: [
         {
-          path: '/create',
-          name: 'Create',
-          component: Create,
+          path: 'buttons',
+          name: 'Buttons',
+          component: () => import('@/views/common/Buttons.vue'),
           meta: {
-            icon: 'add',
-            auth: [],
-          },
-        },
-        {
-          path: '/read',
-          name: 'Read',
-          component: Read,
-          meta: {
-            icon: 'insert_drive_file',
-            auth: [],
-          },
-        },
-        {
-          path: '/update',
-          name: 'Update',
-          component: Update,
-          meta: {
-            icon: 'update',
-            auth: [],
-          },
-        },
-        {
-          path: '/delete',
-          name: 'Delete',
-          component: Delete,
-          meta: {
-            icon: 'delete',
-            auth: [],
+            // auth: [],
           },
         },
       ],

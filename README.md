@@ -25,3 +25,15 @@ npm run serve
 ## Online Demo
 
 [YMUI](https://ymui.yimian.com.cn)
+
+## Export Tailwind config options to SCSS
+
+```bash
+yarn export-tailwind-config
+```
+
+To know more informations, go to [tailwindcss-export-config](https://github.com/dobromir-hristov/tailwindcss-export-config).
+
+## Customize configuration
+
+See [Configuration Reference](https://cli.vuejs.org/config/).

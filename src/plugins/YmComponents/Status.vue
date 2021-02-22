@@ -22,14 +22,14 @@ export default {
   props: {
     label: {
       type: String,
-      default: 'Offline'
+      default: 'Offline',
     },
     status: {
       type: String,
       default: 'offline',
-    }
+    },
   },
-}
+};
 </script>
 
 <style>

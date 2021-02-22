@@ -1,4 +1,4 @@
-@import 'variable';
+@import 'variables';
 
 /*
 Write your variables here. All available variables can be
@@ -8,21 +8,22 @@ found in element-ui/packages/theme-chalk/src/common/var.scss or
 Tip: These must be declared before the import and will automatically override the Element defaults.
 For example, to overwrite the theme color:
 */
-$--color-primary: $--color-brand-500;
-$--color-success: $--color-green-500;
-$--color-warning: $--color-orange-500;
-$--color-danger: $--color-red-500;
-$--color-info: $--color-neutral-70;
 
-$--color-text-primary: $--color-neutral-800;
-$--color-text-regular: $--color-neutral-600;
-$--color-text-secondary: $--color-neutral-70;
-$--color-text-placeholder: $--color-neutral-40;
-$--border-color-base: $--color-neutral-30;
-$--border-color-light: $--color-neutral-20;
-$--border-color-lighter: $--color-neutral-10;
+$--color-primary: $--colors-brand-500;
+$--color-success: $--colors-green-500;
+$--color-warning: $--colors-orange-500;
+$--color-danger: $--colors-red-500;
+$--color-info: $--colors-neutral-70;
 
-$--background-color-base: $--color-neutral-10;
+$--color-text-primary: $--colors-neutral-800;
+$--color-text-regular: $--colors-neutral-600;
+$--color-text-secondary: $--colors-neutral-70;
+$--color-text-placeholder: $--colors-neutral-40;
+$--border-color-base: $--colors-neutral-30;
+$--border-color-light: $--colors-neutral-20;
+$--border-color-lighter: $--colors-neutral-10;
+
+$--background-color-base: $--colors-neutral-10;
 
 $--border-radius-base: $--borderRadius-sm;
 
@@ -50,9 +51,9 @@ $--button-mini-padding-vertical: 3px;
 $--button-mini-padding-horizontal: 8px;
 
 // Dropdown
-$--dropdown-menu-box-shadow: $--shadow-lg;
-$--dropdown-menuItem-hover-fill: $--color-neutral-10;
-$--dropdown-menuItem-hover-color: $--color-neutral-700;
+$--dropdown-menu-box-shadow: $--boxShadow-lg;
+$--dropdown-menuItem-hover-fill: $--colors-neutral-10;
+$--dropdown-menuItem-hover-color: $--colors-neutral-700;
 
 /* Table
 -------------------------- */
@@ -60,7 +61,7 @@ $--dropdown-menuItem-hover-color: $--color-neutral-700;
 $--table-border-color: $--border-color-light;
 $--table-border: 1px solid $--table-border-color;
 /// color||Color|0
-$--table-header-background-color: rgba($--color-neutral-10, .8);
+$--table-header-background-color: rgba($--colors-neutral-10, .8);
 
 /* icon font path, required */
 $--font-path: '~element-ui/lib/theme-chalk/fonts';

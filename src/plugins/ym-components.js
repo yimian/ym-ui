@@ -1,6 +1,8 @@
 import Vue from 'vue';
-import { YmButton } from './YmComponents';
-import { YmStatus } from './YmComponents';
+import {
+  YmButton,
+  YmStatus,
+} from './YmComponents';
 
 Vue.use(YmButton);
 Vue.use(YmStatus);
