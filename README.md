@@ -1,24 +1,27 @@
 # ym-ui
 
-## Project setup
-```
-npm install
-```
+## Introduction
 
-### Compiles and hot-reloads for development
-```
+[ym-ui](https://ymui.yimian.com.cn) is a front-end solution.
+
+## Getting started
+
+```shell
+# clone the project
+git clone https://github.com/yimian/ym-ui.git
+
+# enter the project directory
+cd ym-ui
+
+# install dependency
+npm install
+
+# develop
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Changelog
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Online Demo
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+[YMUI](https://ymui.yimian.com.cn)
