@@ -1,21 +1,20 @@
 <template>
   <el-dropdown
-    class="flex items-center w-full text-brand-200 hover:text-white hover:bg-brand-600"
+    class="flex items-center"
     placement="right"
     trigger="click"
   >
-    <div class="flex items-center w-full px-4 py-2">
-      <div class="flex items-center justify-center w-8 h-8">
+    <div class="flex items-center w-full py-2 pl-4 pr-3">
+      <div class="flex items-center justify-center flex-shrink-0 w-8 h-8 mr-1">
         <ym-svg
           svg-name="user-avatar"
           class="w-5 h-5"
         />
       </div>
-      <span class="ml-1">{{ user && user.username }}</span>
-      <ym-svg
-        svg-name="chevron-down"
-        class="w-4 h-4 ml-auto transform -rotate-90"
-      />
+      <span class="whitespace-nowrap collapsable-label">
+        {{ user && user.username }}
+      </span>
+      <slot name="arrow"></slot>
     </div>
     <el-dropdown-menu slot="dropdown">
       <el-dropdown-item class="flex items-center">
@@ -43,6 +42,12 @@
 <script>
 export default {
   name: 'UserSettings',
+  props: {
+    isCollapse: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {};
   },

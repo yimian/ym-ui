@@ -1,22 +1,12 @@
 // #{!important} used for override the inline styles
 
 .ym-sidebar {
-  @apply flex flex-col bg-brand-700 w-auto #{!important};
-
-  // Header
-  &__header {
-    @apply flex items-center justify-between flex-shrink-0 px-4 py-4;
+  .el-menu:not(.el-menu--collapse) {
+    width: 200px;
   }
 
   // Menu
   &__menu {
-    @apply flex-1 py-4 bg-transparent border-none;
-
-    // Default Width
-    &:not(.el-menu--collapse) {
-      width: 200px;
-    }
-
     // The padding-left of submenu
     & > .el-submenu {
       & > .el-menu {
@@ -28,23 +18,16 @@
     }
   }
 
-  // Footer
   &__footer {
-    @apply flex-shrink-0 py-4;
-  }
+    width: 200px;
 
+    &--collapse {
+      width: 64px;
+    }
+  }
+  
   // Menu Item
   .el-menu-item {
-    @apply flex items-center h-12 pl-4 pr-3 text-brand-200 #{!important};
-
-    &:hover {
-      @apply text-white bg-brand-600;
-    }
-
-    &:focus {
-      @apply bg-brand-600;       
-    }
-
     &.is-active {
       @apply text-white bg-brand-600 #{!important};
     }
@@ -68,7 +51,7 @@
       @apply text-sm text-brand-100;
 
       right: 16px;
-      margin-top: -10px
+      margin-top: -10px;
     }
 
     .el-menu {
