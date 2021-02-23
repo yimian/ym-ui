@@ -1,5 +1,7 @@
 <template>
-  <footer :class="['relative flex-shrink-0 py-4 transition-all ym-sidebar__footer', { 'ym-sidebar__footer--collapse' : isCollapse }]">
+  <footer :class="['relative flex-shrink-0 py-4 transition-all ym-sidebar__footer',
+    { 'ym-sidebar__footer--collapse' : isCollapse }]"
+  >
     <!-- Language Switcher -->
     <base-langbar
       class="w-full"
@@ -28,10 +30,9 @@
     </user-settings>
 
     <!-- Overflow – Hide the label and arrow when sidebar have been collapsed -->
-    <div :class="[
-        'absolute inset-y-0 right-0 opacity-0 left-12 bg-brand-700 transition duration-700 pointer-events-none',
-        { 'opacity-100' : isCollapse }
-      ]"
+    <div
+      class="'absolute inset-y-0 right-0 opacity-0 left-12 bg-brand-700 transition duration-700 pointer-events-none'"
+      :class="[{ 'opacity-100' : isCollapse }]"
     />
   </footer>
 </template>

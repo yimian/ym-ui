@@ -83,12 +83,11 @@
           :label="$t('common.status')"
           width="128"
         >
-          <template slot-scope="scope">
-            <ym-status
-              :status="scope.row.status.status"
-              :label="scope.row.status.label"
-            />
-          </template>
+          <ym-status
+            slot-scope="scope"
+            :status="scope.row.status.status"
+            :label="scope.row.status.label"
+          />
         </el-table-column>
         <el-table-column
           prop="updateTime"
@@ -102,56 +101,57 @@
           fixed="right"
           width="96"
         >
-          <template slot-scope="scope">
-            <div class="space-x-4">
+          <div
+            slot-scope="scope"
+            class="space-x-4"
+          >
+            <ym-button
+              type="text"
+              size="mini"
+              icon="edit"
+              icon-only
+              @click="handleEdit(scope.$index, scope.row)"
+            />
+            <el-dropdown trigger="click">
               <ym-button
                 type="text"
                 size="mini"
-                icon="edit"
+                icon="menu-more"
                 icon-only
-                @click="handleEdit(scope.$index, scope.row)"
               />
-              <el-dropdown trigger="click">
-                <ym-button
-                  type="text"
-                  size="mini"
-                  icon="menu-more"
-                  icon-only
-                />
-                <el-dropdown-menu slot="dropdown">
-                  <el-dropdown-item class="flex items-center">
-                    <ym-svg
-                      svg-name="password"
-                      class="mr-2"
-                    />
-                    {{ $t('common.account') }}
-                  </el-dropdown-item>
-                  <el-dropdown-item class="flex items-center">
-                    <ym-svg
-                      svg-name="error"
-                      class="mr-2"
-                    />
-                    {{ $t('common.disable') }}
-                  </el-dropdown-item>
-                  <el-dropdown-item divided />
-                  <el-dropdown-item class="flex items-center">
-                    <ym-svg
-                      svg-name="trash-can"
-                      class="mr-2"
-                    />
-                    {{ $t('common.delete') }}
-                  </el-dropdown-item>
-                </el-dropdown-menu>
-              </el-dropdown>
-            </div>
-          </template>
+              <el-dropdown-menu slot="dropdown">
+                <el-dropdown-item class="flex items-center">
+                  <ym-svg
+                    svg-name="password"
+                    class="mr-2"
+                  />
+                  {{ $t('common.account') }}
+                </el-dropdown-item>
+                <el-dropdown-item class="flex items-center">
+                  <ym-svg
+                    svg-name="error"
+                    class="mr-2"
+                  />
+                  {{ $t('common.disable') }}
+                </el-dropdown-item>
+                <el-dropdown-item divided />
+                <el-dropdown-item class="flex items-center">
+                  <ym-svg
+                    svg-name="trash-can"
+                    class="mr-2"
+                  />
+                  {{ $t('common.delete') }}
+                </el-dropdown-item>
+              </el-dropdown-menu>
+            </el-dropdown>
+          </div>
         </el-table-column>
       </el-table>
       <el-pagination
         class="p-4 text-right"
         layout="prev, pager, next"
-        :total="50">
-      </el-pagination>
+        :total="50"
+      />
     </div>
   </div>
 </template>
@@ -181,6 +181,3 @@ export default {
   },
 };
 </script>
-
-<style>
-</style>

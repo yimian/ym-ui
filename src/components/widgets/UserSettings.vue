@@ -14,7 +14,7 @@
       <span class="whitespace-nowrap collapsable-label">
         {{ user && user.username }}
       </span>
-      <slot name="arrow"></slot>
+      <slot name="arrow" />
     </div>
     <el-dropdown-menu slot="dropdown">
       <el-dropdown-item class="flex items-center">
@@ -24,7 +24,7 @@
         />
         {{ $t('common.account') }}
       </el-dropdown-item>
-      <el-dropdown-item divided></el-dropdown-item>
+      <el-dropdown-item divided />
       <el-dropdown-item
         class="flex items-center"
         @click.native="logout"

@@ -76,7 +76,8 @@
             <div class="login__main-submitBtnGroups">
               <ym-button
                 type="text"
-                @click.native="redirectForgotPassword">
+                @click.native="redirectForgotPassword"
+              >
                 {{ $t('common.forgetPassword') }}
               </ym-button>
               <ym-button
