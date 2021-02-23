@@ -1,6 +1,6 @@
 <template>
   <el-menu
-    class="ym-sidebar__menu"
+    class="flex flex-col flex-1 py-4 bg-transparent border-none ym-sidebar__menu"
     router
     :default-active="activeMenu"
     :collapse="isCollapse"
@@ -9,12 +9,12 @@
       <template v-if="!route.children">
         <el-menu-item
           v-if="roleShow(route)"
-          class="ym-sidebar__menu-item"
+          class="flex items-center h-12 pl-4 pr-3 text-brand-200 hover:text-white hover:bg-brand-600 focus:bg-brand-600"
           :key="index"
           :index="route.name"
           :route="route"
         >
-          <div class="flex items-center justify-center w-8 h-8 mr-1">
+          <div class="flex items-center justify-center flex-shrink-0 w-8 h-8 mr-1">
             <ym-svg
               :svg-name="getRouteName(route).toLowerCase()"
               class="w-5 h-5"
@@ -32,7 +32,7 @@
           :key="index"
         >
           <template slot="title">
-            <div class="flex items-center justify-center w-8 h-8 mr-1">
+            <div class="flex items-center justify-center flex-shrink-0 w-8 h-8 mr-1">
               <ym-svg
                 :svg-name="getRouteName(route).toLowerCase()"
                 class="w-5 h-5"
@@ -41,18 +41,14 @@
             <span>{{ i18nRouteName(route.name) }}</span>
           </template>
           <el-menu-item
+            class="flex items-center h-12 pl-4 pr-3 text-brand-200 hover:text-white
+              hover:bg-brand-600 focus:bg-brand-600"
             v-for="(cRoute, idx) in route.children"
             :key="idx"
             :index="cRoute.name"
             :route="cRoute"
           >
             <template slot="title">
-              <div class="flex items-center justify-center w-8 h-8 mr-1">
-                <ym-svg
-                  :svg-name="getRouteName(cRoute).toLowerCase()"
-                  class="w-5 h-5"
-                />
-              </div>
               <span>{{ i18nRouteName(cRoute.name) }}</span>
             </template>
           </el-menu-item>
@@ -61,12 +57,13 @@
       <template v-else>
         <el-menu-item
           v-if="roleShow(route.children[0])"
-          class="ym-sidebar__menu-item"
+          class="flex items-center h-12 pl-4 pr-3 text-brand-200 hover:text-white hover:bg-brand-600
+          focus:bg-brand-600"
           :key="index"
           :index="getRouteName(route)"
           :route="route.children[0]"
         >
-          <div class="flex items-center justify-center w-8 h-8 mr-1">
+          <div class="flex items-center justify-center flex-shrink-0 w-8 h-8 mr-1">
             <ym-svg
               :svg-name="getRouteName(route).toLowerCase()"
               class="w-5 h-5"

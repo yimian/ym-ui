@@ -218,5 +218,9 @@ export default {
       en: 'Buttons',
       'zh-CN': '按钮',
     },
+    actions: {
+      en: 'actions',
+      'zh-CN': '操作',
+    },
   },
 };

@@ -1,13 +1,16 @@
 <template>
   <el-dropdown
     :placement="placement"
-    :trigger="trigger">
+    :trigger="trigger"
+  >
     <div :class="[className ,'flex items-center transition duration-150 ease-in-out']">
-      <div class="flex items-center justify-center w-8 h-8">
+      <div class="flex items-center justify-center flex-shrink-0 w-8 h-8 mr-1">
         <ym-svg svg-name="wikis" class="w-5 h-5" />
       </div>
-      <span class="ml-1">{{ currentLang === 'zh-CN' ? '中文' : 'En' }}</span>
-      <slot name="arrow"></slot>
+      <span class="whitespace-nowrap collapsable-label">
+        {{ currentLang === 'zh-CN' ? '中文' : 'En' }}
+      </span>
+      <slot name="arrow" />
     </div>
     <el-dropdown-menu slot="dropdown">
       <el-dropdown-item @click.native="switchLang('zh-CN')">中文</el-dropdown-item>

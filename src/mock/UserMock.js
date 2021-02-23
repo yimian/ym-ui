@@ -110,3 +110,4 @@ export const USERS = [
     updateTime: '2019-06-30  16:07:30',
   },
 ];
+export const USER = [];
