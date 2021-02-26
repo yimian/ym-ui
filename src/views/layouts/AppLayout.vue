@@ -21,7 +21,7 @@
               class="w-6 h-6"
             />
           </ym-button>
-          <h1 class="font-medium text-neutral-800">{{ $route.name }}</h1>
+          <the-breadcrumb />
         </div>
       </el-header>
       <app-main class="p-6" />
@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import TheBreadcrumb from '@/components/widgets/TheBreadcrumb.vue';
 import AppSidebar from './components/AppSidebar.vue';
 import AppMain from './components/AppMain.vue';
 
@@ -38,13 +39,12 @@ export default {
   components: {
     AppSidebar,
     AppMain,
+    TheBreadcrumb,
   },
   data() {
     return {
       isCollapse: false,
     };
-  },
-  methods: {
   },
 };
 </script>
